@@ -5006,6 +5006,7 @@ GameObject:
   - component: {fileID: 1371258589}
   - component: {fileID: 1371258588}
   - component: {fileID: 1371258587}
+  - component: {fileID: 1371258591}
   m_Layer: 0
   m_Name: Neighbor
   m_TagString: Untagged
@@ -5025,6 +5026,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3970d03105ba94ea7df7a66034fda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1.5
+  fear: 0
+  fearLimit: 0
+  radius: 0
+  actionTriggered: 0
+  xPosAction: 0
+  yPosAction: 0
+  neighborRb: {fileID: 0}
+  direction: {x: 0, y: -1}
+  functionsScript: {fileID: 0}
 --- !u!50 &1371258588
 Rigidbody2D:
   serializedVersion: 4
@@ -5111,6 +5122,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1371258591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371258586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c577b2c7c26e4d449130b57d11e8f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1406057664
 GameObject:
   m_ObjectHideFlags: 0
