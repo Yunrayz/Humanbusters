@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Neighbor : MonoBehaviour
+public class Neighbor1 : MonoBehaviour
 {
     public float speed = 1.5f;
     public int fear;        //fear the NPC is feeling
-    public int fearLimit;   //limit of Fear before he runs away
-    public float radius;    //min distance between the NPC and the action for him to be affected
+    public int fearLimit = 100;   //limit of Fear before he runs away
+    public float radius = 2;    //min distance between the NPC and the action for him to be affected
 
     //get from interaction scripts
-    public bool actionTriggered;
-    public float xPosAction;
-    public float yPosAction;
+    public bool actionTriggered = false;
+    public float xPosAction = 5;
+    public float yPosAction = 5;
 
     private Rigidbody2D neighborRb;
     private Vector2 direction = Vector2.down;
