@@ -19,8 +19,17 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        ProcessInputs();
-        Move();
+        
+        if (transform.position.x > -6.7 && transform.position.x < 6.5 && 
+            transform.position.y < 4.55 && transform.position.y > -4.55)
+        {
+            ProcessInputs();
+            Move();
+        } else
+        {
+            stopAtBoundary();
+        }
+        
     }
     void ProcessInputs(){
         float moveX = Input.GetAxisRaw("Horizontal");
@@ -30,6 +39,11 @@ public class Player : MonoBehaviour
 
     void Move(){
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+    }
+
+    void StopMovement()
+    {
+        rb.velocity = new Vector2(0, 0);
     }
 
 
@@ -50,5 +64,26 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         timeIsPassed = true;
+    }
+
+    private void stopAtBoundary()
+    {
+        rb.velocity = new Vector2(0, 0);
+        if (transform.position.x <= -6.7)
+        {
+            rb.AddForce(Vector2.right);
+        }
+        else if (transform.position.x >= 6.5)
+        {
+            rb.AddForce(Vector2.left);
+        }
+        else if (transform.position.y >= 4.55)
+        {
+            rb.AddForce(Vector2.down);
+        }
+        else if (transform.position.y <= -4.55)
+        {
+            rb.AddForce(Vector2.up);
+        }
     }
 }
