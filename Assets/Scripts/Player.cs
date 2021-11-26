@@ -20,15 +20,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         
-        if (transform.position.x > -6.7 && transform.position.x < 6.5 && 
-            transform.position.y < 4.55 && transform.position.y > -4.55)
-        {
-            ProcessInputs();
-            Move();
-        } else
-        {
-            stopAtBoundary();
-        }
+        ProcessInputs();
+        Move();
         
     }
     void ProcessInputs(){
@@ -66,24 +59,4 @@ public class Player : MonoBehaviour
         timeIsPassed = true;
     }
 
-    private void stopAtBoundary()
-    {
-        rb.velocity = new Vector2(0, 0);
-        if (transform.position.x <= -6.7)
-        {
-            rb.AddForce(Vector2.right);
-        }
-        else if (transform.position.x >= 6.5)
-        {
-            rb.AddForce(Vector2.left);
-        }
-        else if (transform.position.y >= 4.55)
-        {
-            rb.AddForce(Vector2.down);
-        }
-        else if (transform.position.y <= -4.55)
-        {
-            rb.AddForce(Vector2.up);
-        }
-    }
 }
