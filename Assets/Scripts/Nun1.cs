@@ -17,10 +17,12 @@ public class Nun1 : MonoBehaviour
     private Rigidbody2D nunRb;
     private Vector2 direction = Vector2.down;
     private NPCFunctions functionsScript;       //script with functions common to all NPCs
+    private AudioSource audioSource;
 
     void Start()
     {
         nunRb = GetComponent<Rigidbody2D>();
+        audioSource = transform.GetComponent<AudioSource>();
         fear = 0;
         functionsScript = transform.GetComponent<NPCFunctions>();
     }
@@ -34,7 +36,7 @@ public class Nun1 : MonoBehaviour
             if (functionsScript.checkDistance(xPosAction, yPosAction, radius))
             {
                 fear += 100;
-                StartCoroutine(Waiting());
+                audioSource.Play();
             }
         }
 
@@ -67,8 +69,4 @@ public class Nun1 : MonoBehaviour
         }
     }
 
-    IEnumerator Waiting()
-    {
-        yield return new WaitForSeconds(5);
-    }
 }
