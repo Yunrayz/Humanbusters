@@ -2,61 +2,75 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Collidable : MonoBehaviour
 {
-    // Start is called before the first frame update
     public ContactFilter2D filter;
-    private BoxCollider2D boxCollider;
+    public BoxCollider2D boxCollider;
     private Collider2D[] hits = new Collider2D[10];
-    private bool triggerActive = false;
-    //public Text helperText;
+    public bool actionMade = false;
+    private Movement simon;
+    private bool menuActive = false;
+    public Canvas helperCanvas;
+    public TMP_Text helperText;
+    private Vector3 menuPosition; 
 
     protected virtual void Start(){
+        Vector3 objectPosition = gameObject.transform.position;
+        menuPosition = new Vector3(objectPosition.x, objectPosition.y+1.7f, objectPosition.z);
         boxCollider = GetComponent<BoxCollider2D>();
-        
+        simon = GameObject.FindWithTag("Player").GetComponent<Movement>();
     }
 
-      public void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.CompareTag("Player"))
-            {
-                triggerActive = true;
-      //          helperText.gameObject.SetActive(true);
-            }
-        }
  
-        public void OnTriggerExit2D(Collider2D other)
-        {
-            if (other.CompareTag("Player"))
-            {
-                triggerActive = false;
-        //        helperText.gameObject.SetActive(false);
-            }
-        }
     protected virtual void Update(){
         boxCollider.OverlapCollider(filter, hits );
         for (int i = 0; i < hits.Length; i++)
         {
             if(hits[i] == null)
                 continue;
-            triggerActive = true;
-            if (triggerActive && Input.GetKeyDown(KeyCode.F))
-            {
+            if(!actionMade)    
+                helperTextGenerator();
+            if (Input.GetKeyDown(KeyCode.F))
                 onCollide(boxCollider);
-            }
             hits[i] = null;
         }
          
         
     }
-      
- 
-        public void SomeCoolAction()
-        {
-            Debug.Log("test");
+
+    protected void helperTextGenerator(){
+        if(!menuActive){
+            helperText.text = "Press F to interact";
         }
-    protected virtual void onCollide(Collider2D coll){
-        
+        else{
+             helperText.text = "Press ENTER to fire an action, ESC to close";
+            
+        }
+        helperCanvas.gameObject.SetActive(true);
+    }
+    protected virtual void onCollide(Collider2D coll){  
+    }
+
+    protected virtual void OnTriggerExit2D(Collider2D other){
+        helperCanvas.gameObject.SetActive(false);
+     }
+    protected void hideMenu(Canvas canvas){
+        canvas.gameObject.SetActive(false);
+        menuActive = false;
+        simon.canMove = true;
+    }
+
+    protected void makeAction(){
+        actionMade = true;
+    }
+    protected virtual void showMenu(Canvas canvas){
+        if(!actionMade){
+        canvas.gameObject.transform.SetPositionAndRotation(menuPosition, Quaternion.identity);
+        canvas.gameObject.SetActive(true);
+        menuActive = true;
+        simon.canMove = false;
+        }
     }
 }

@@ -5,13 +5,19 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float moveSpeed;
+    public bool canMove = true;
     public Rigidbody2D rb;
     public Vector2 moveDirection;
 
     void Update()
     {
         ProcessInputs();
-        Move();
+        if(canMove){
+            Move();
+        }
+        else{
+            rb.velocity = Vector2.zero;
+        }
     }
     void ProcessInputs(){
         float moveX = Input.GetAxisRaw("Horizontal");
