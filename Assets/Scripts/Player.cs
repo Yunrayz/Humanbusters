@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
 
     IEnumerator Waiting()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         timeIsPassed = true;
     }
 

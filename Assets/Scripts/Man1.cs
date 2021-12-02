@@ -8,6 +8,8 @@ public class Man1 : MonoBehaviour
     public int fear;                //fear the NPC is feeling
     public int fearLimit = 100;     //limit of Fear before he runs away
     public float radius = 2;        //min distance between the NPC and the action for him to be affected
+    private bool running;
+
 
     //get from interaction scripts
     public bool actionTriggered = false;
@@ -17,13 +19,16 @@ public class Man1 : MonoBehaviour
     private Rigidbody2D neighborRb;
     private Vector2 direction = Vector2.down;
     private NPCFunctions functionsScript;       //script with functions common to all NPCs
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         neighborRb = GetComponent<Rigidbody2D>();
         fear = 0;
-        functionsScript = transform.GetComponent<NPCFunctions>();
+        functionsScript = GameObject.Find("GameManager").GetComponent<NPCFunctions>();
+        audioSource = GetComponent<AudioSource>();
+        running = false;
     }
 
     // Update is called once per frame
@@ -35,13 +40,14 @@ public class Man1 : MonoBehaviour
             if (functionsScript.checkDistance(xPosAction, yPosAction, radius))
             {
                 fear += 100;
-                StartCoroutine(Waiting());
             }
         }
 
-        if (fear > fearLimit)
+        if (fear >= fearLimit)
         {
-            functionsScript.runAway(xPosAction, yPosAction);
+            if (!running)
+                audioSource.Play();
+            RunAway();
         } else { 
             Move(); 
         }
@@ -50,6 +56,7 @@ public class Man1 : MonoBehaviour
 
     private void Move()
     {
+
         if (transform.position.y >= 0)
         {
             direction = Vector2.down;
@@ -66,8 +73,17 @@ public class Man1 : MonoBehaviour
         }
     }
 
-    IEnumerator Waiting()
+
+    private void RunAway()
     {
-        yield return new WaitForSeconds(5);
+        running = true;
+        if (transform.position.y < 1)
+            neighborRb.velocity = speed * Vector2.up;
+        else if (transform.position.x < 5.5)
+            neighborRb.velocity = speed * Vector2.right;
+        else if (transform.position.y < 1.8)
+            neighborRb.velocity = speed * Vector2.up;
+        else
+            Destroy(this.gameObject);
     }
 }
