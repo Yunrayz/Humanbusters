@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NPCFunctions : MonoBehaviour
 {
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +26,6 @@ public class NPCFunctions : MonoBehaviour
         return xDistance < radius && yDistance < radius;
     }
 
-    public void runAway (float xPosAction, float yPosAction)
-    {
-        //animation & disappear, destroy NPC
-    }
+    
+
 }

@@ -8,14 +8,17 @@ public class Nun1 : MonoBehaviour
     public int fear;                //fear the NPC is feeling
     public int fearLimit = 100;     //limit of Fear before he runs away
     public float radius = 2;        //min distance between the NPC and the action for him to be affected
+    private bool running;
+
 
     //get from interaction scripts
     public bool actionTriggered = false;
     public float xPosAction = 5;
     public float yPosAction = 5;
 
+
     private Rigidbody2D nunRb;
-    private Vector2 direction = Vector2.down;
+    private Vector2 direction = Vector2.left;
     private NPCFunctions functionsScript;       //script with functions common to all NPCs
     private AudioSource audioSource;
 
@@ -24,7 +27,8 @@ public class Nun1 : MonoBehaviour
         nunRb = GetComponent<Rigidbody2D>();
         audioSource = transform.GetComponent<AudioSource>();
         fear = 0;
-        functionsScript = transform.GetComponent<NPCFunctions>();
+        functionsScript = GameObject.Find("GameManager").GetComponent<NPCFunctions>();
+        running = false;
     }
 
     // Update is called once per frame
@@ -42,7 +46,9 @@ public class Nun1 : MonoBehaviour
 
         if (fear > fearLimit)
         {
-            functionsScript.runAway(xPosAction, yPosAction);
+            if (!running)
+                audioSource.Play();
+            RunAway();
         }
         else
         {
@@ -53,14 +59,14 @@ public class Nun1 : MonoBehaviour
 
     private void Move()
     {
-        if (transform.position.y >= 0)
+        if (transform.position.x >= 6)
         {
-            direction = Vector2.down;
+            direction = Vector2.left;
             nunRb.velocity = speed * direction;
         }
-        else if (transform.position.y <= -2.5)
+        else if (transform.position.x <= 3)
         {
-            direction = Vector2.up;
+            direction = Vector2.right;
             nunRb.velocity = speed * direction;
         }
         else
@@ -69,4 +75,17 @@ public class Nun1 : MonoBehaviour
         }
     }
 
+    private void RunAway()
+    {
+        running = true;
+
+        if (transform.position.x < 5.5)
+            nunRb.velocity = speed * Vector2.right;
+        else if (transform.position.x > 5.5)
+            nunRb.velocity = speed * Vector2.left;
+        else if (transform.position.y < 1.8)
+            nunRb.velocity = speed * Vector2.up;
+        else
+            Destroy(this.gameObject);
+    }
 }
