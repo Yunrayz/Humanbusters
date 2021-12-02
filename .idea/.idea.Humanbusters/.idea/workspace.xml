@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bb3b950-3363-4bf8-91b2-c3c17fd722e9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Humanbusters/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Humanbusters/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Humanbusters/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Humanbusters/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Humanbusters/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Humanbusters/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/living room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/living room.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +67,7 @@
       <workItem from="1638475119674" duration="658000" />
       <workItem from="1638475808252" duration="74000" />
       <workItem from="1638475901285" duration="109000" />
-      <workItem from="1638477726655" duration="1650000" />
+      <workItem from="1638477726655" duration="2285000" />
     </task>
     <servers />
   </component>
