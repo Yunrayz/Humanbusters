@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Nun1 : MonoBehaviour
+public class Nun2 : MonoBehaviour
 {
     public float speed;
     public int fear;                //fear the NPC is feeling
@@ -62,14 +62,24 @@ public class Nun1 : MonoBehaviour
 
     private void Move()
     {
-        if (transform.position.x >= 6)
+        if (Vector2.Distance(transform.position, new Vector2(-4.5f, 1)) < 0.1f)
+        {
+            direction = Vector2.down;
+            nunRb.velocity = speed * direction;
+        }
+        else if (Vector2.Distance(transform.position, new Vector2(-4.5f, -4)) < 0.1f && direction.Equals(Vector2.down))
+        {
+            direction = Vector2.right;
+            nunRb.velocity = speed * direction;
+        }
+        else if (Vector2.Distance(transform.position, new Vector2(5f, -4)) < 0.1f)
         {
             direction = Vector2.left;
             nunRb.velocity = speed * direction;
         }
-        else if (transform.position.x <= 3)
+        else if (Vector2.Distance(transform.position, new Vector2(-4.5f, -4)) < 0.1f && direction.Equals(Vector2.left))
         {
-            direction = Vector2.right;
+            direction = Vector2.up;
             nunRb.velocity = speed * direction;
         }
         else
@@ -83,16 +93,19 @@ public class Nun1 : MonoBehaviour
         running = true;
         speed = 2.5f;
 
+        if (transform.position.x < -4.3f)
+            stop = 1;
+
         switch (stop)
         {
             case 0:
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(5.5f, -3), speed * Time.deltaTime);
-                if (Vector2.Distance(transform.position, new Vector2(5.5f, -3)) < 0.001f)
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(-5.5f, -4), speed * Time.deltaTime);
+                if (Vector2.Distance(transform.position, new Vector2(-5.5f, -4)) < 0.01f)
                     stop = 1;
                 break;
             case 1:
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(5.5f, 1.8f), speed * Time.deltaTime);
-                if (Vector2.Distance(transform.position, new Vector2(5.5f, 1.8f)) < 0.001f)
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(-5.5f, 1), speed * Time.deltaTime);
+                if (Vector2.Distance(transform.position, new Vector2(-5.5f, 1)) < 0.01f)
                     Destroy(this.gameObject);
                 break;
         }
