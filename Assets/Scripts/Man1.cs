@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Man1 : MonoBehaviour
 {
-    public float speed;
+    public float speed = 1.5f;
     public int fear;                //fear the NPC is feeling
     public int fearLimit = 100;     //limit of Fear before he runs away
     public float radius = 2;        //min distance between the NPC and the action for him to be affected
@@ -29,7 +29,6 @@ public class Man1 : MonoBehaviour
         functionsScript = GameObject.Find("GameManager").GetComponent<NPCFunctions>();
         audioSource = GetComponent<AudioSource>();
         running = false;
-        speed = 1;
     }
 
     // Update is called once per frame
@@ -78,7 +77,6 @@ public class Man1 : MonoBehaviour
     private void RunAway()
     {
         running = true;
-        speed = 2.5f;
         if (transform.position.y < 1)
             neighborRb.velocity = speed * Vector2.up;
         else if (transform.position.x < 5.5)
