@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float moveSpeed;
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     public Vector2 moveDirection;
 
     public int hp;
@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     private void Start()
     {
         timeIsPassed = true;
+        rb = GetComponent<Rigidbody2D>();
+        moveSpeed = 5;
     }
 
     void Update()

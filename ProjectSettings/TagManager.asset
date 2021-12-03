@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Exorcist
   - Object
+  - Interactive
   layers:
   - Default
   - TransparentFX

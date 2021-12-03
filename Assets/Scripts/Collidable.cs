@@ -86,7 +86,7 @@ public class Collidable : MonoBehaviour
     }
 
     protected virtual void showMenu(Canvas canvas){
-        if(!actionMade){
+        if(!actionMade && this.gameObject.tag == "Interactive"){
         canvas.gameObject.transform.SetPositionAndRotation(menuPosition, Quaternion.identity);
         canvas.gameObject.SetActive(true);
         menuActive = true;
