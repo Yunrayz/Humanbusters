@@ -12,14 +12,12 @@ public class Man1 : MonoBehaviour
 
 
     //get from interaction scripts
-    public bool actionTriggered = false;
-    public float xPosAction = 5;
-    public float yPosAction = 5;
 
     private Rigidbody2D neighborRb;
     private Vector2 direction = Vector2.down;
     private NPCFunctions functionsScript;       //script with functions common to all NPCs
     private AudioSource audioSource;
+    private Player player;
 
     // Start is called before the first frame update
     void Start()
@@ -29,26 +27,32 @@ public class Man1 : MonoBehaviour
         functionsScript = GameObject.Find("GameManager").GetComponent<NPCFunctions>();
         audioSource = GetComponent<AudioSource>();
         running = false;
+        player = GameObject.Find("Player").GetComponent<Player>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (actionTriggered)
-        {
-            if (functionsScript.checkDistance(xPosAction, yPosAction, radius))
-            {
-                fear += 100;
-            }
-        }
+        
 
         if (fear >= fearLimit)
         {
             if (!running)
                 audioSource.Play();
             RunAway();
-        } else { 
+        } else if (functionsScript.actionTriggered)
+        {
+            if (functionsScript.checkDistance(transform.position, functionsScript.posAction, radius))
+            {
+                fear += 10;
+            }
+            functionsScript.actionTriggered = false;
+        } else if (player.hp <= 0)
+        {
+            functionsScript.stopMovement(neighborRb);
+        }
+        else { 
             Move(); 
         }
 

@@ -5,27 +5,18 @@ using UnityEngine;
 public class NPCFunctions : MonoBehaviour
 {
 
+    public bool actionTriggered;
+    public Vector2 posAction;
 
-    // Start is called before the first frame update
-    void Start()
+    
+    public bool checkDistance (Vector2 posNPC, Vector2 posAction, float radius)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public bool checkDistance (float xPosAction, float yPosAction, float radius)
-    {
-        float xDistance = Mathf.Abs(transform.position.x - xPosAction);
-        float yDistance = Mathf.Abs(transform.position.y - yPosAction);
-
-        return xDistance < radius && yDistance < radius;
+        return Vector2.Distance(posNPC, posAction) < 2;
     }
 
     
-
+    public void stopMovement(Rigidbody2D rb)
+    {
+        rb.velocity = new Vector2(0, 0);
+    }
 }
