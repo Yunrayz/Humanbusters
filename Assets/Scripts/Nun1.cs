@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Nun1 : MonoBehaviour
 {
-    public float speed;
+    public float speed = 1.5f;
     public int fear;                //fear the NPC is feeling
     public int fearLimit = 100;     //limit of Fear before he runs away
     public float radius = 2;        //min distance between the NPC and the action for him to be affected
     private bool running;
-    private int stop;
 
 
     //get from interaction scripts
@@ -30,8 +29,6 @@ public class Nun1 : MonoBehaviour
         fear = 0;
         functionsScript = GameObject.Find("GameManager").GetComponent<NPCFunctions>();
         running = false;
-        speed = 1;
-        stop = 0;
     }
 
     // Update is called once per frame
@@ -81,20 +78,14 @@ public class Nun1 : MonoBehaviour
     private void RunAway()
     {
         running = true;
-        speed = 2.5f;
 
-        switch (stop)
-        {
-            case 0:
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(5.5f, -3), speed * Time.deltaTime);
-                if (Vector2.Distance(transform.position, new Vector2(5.5f, -3)) < 0.001f)
-                    stop = 1;
-                break;
-            case 1:
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(5.5f, 1.8f), speed * Time.deltaTime);
-                if (Vector2.Distance(transform.position, new Vector2(5.5f, 1.8f)) < 0.001f)
-                    Destroy(this.gameObject);
-                break;
-        }
+        if (transform.position.x < 5.5)
+            nunRb.velocity = speed * Vector2.right;
+        else if (transform.position.x > 5.5)
+            nunRb.velocity = speed * Vector2.left;
+        else if (transform.position.y < 1.8)
+            nunRb.velocity = speed * Vector2.up;
+        else
+            Destroy(this.gameObject);
     }
 }
