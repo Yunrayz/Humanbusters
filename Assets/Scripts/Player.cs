@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb;
     public Vector2 moveDirection;
 
-    public float hp;
+    public int hp;
     private bool timeIsPassed;
 
 
@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Exorcist" && timeIsPassed)
         {
             Debug.Log("CollisionDetected");
-            //hp =- 111
+            hp -= 100;
             timeIsPassed = false;
             StartCoroutine(Waiting());
         }
