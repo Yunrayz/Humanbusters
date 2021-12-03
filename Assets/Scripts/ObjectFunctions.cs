@@ -19,11 +19,11 @@ public class ObjectFunctions : MonoBehaviour
     }
 
      public void dropObject(Collider2D collider){
+        action = "drop";
         collider.SendMessage("makeAction");
         collider.SendMessage("hideMenuHelper");
         assetBroken = collider.gameObject.GetComponent<SpriteRenderer>().sprite.name + "Broken";
         objectAction = collider.attachedRigidbody;
-        collider.gameObject.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load<Sprite>(assetBroken);
         oneThrow = true;
      }
      public void turnOnOffObject(Collider2D collider){
@@ -41,7 +41,7 @@ public class ObjectFunctions : MonoBehaviour
         oneThrow = false;
         if(action == "throw")
             yield return new WaitForSeconds(2);
-        objectAction.gameObject.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load<Sprite>(assetBroken) as Sprite;
+        //objectAction.gameObject.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load<Sprite>(assetBroken) as Sprite;
     }
      void FixedUpdate(){
          if (oneThrow){

@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Books : Collidable
+public class Item : Collidable
 {
-    public Canvas booksCanvas;
+    public Canvas itemCanvas;
+    
    
     // public Menu menu;
     // public Collidable collidable;
@@ -16,7 +17,7 @@ public class Books : Collidable
         // test.Add("Drop", delegate {menu.dropObject(collidable.boxCollider);});
         // menu.addButtons(test);
         // Debug.Log(menu.buttonList);
-        booksCanvas.gameObject.SetActive(false);
+        itemCanvas.gameObject.SetActive(false);
         helperCanvas.gameObject.SetActive(false);
 
         
@@ -24,22 +25,22 @@ public class Books : Collidable
     }
     protected override void OnTriggerExit2D(Collider2D other){
         base.OnTriggerExit2D(other);
-        hideMenu(booksCanvas);
+        hideMenu(itemCanvas);
     }
    protected override void Update(){
        base.Update();
-       if (booksCanvas.gameObject.activeInHierarchy == true && Input.GetKeyDown(KeyCode.Escape)){
-           hideMenu(booksCanvas);
+       if (itemCanvas.gameObject.activeInHierarchy == true && Input.GetKeyDown(KeyCode.Escape)){
+           hideMenu(itemCanvas);
        }
        
    }
 
    protected void hideMenuHelper(){
-       hideMenu(booksCanvas);
+       hideMenu(itemCanvas);
    }
     protected override void onCollide(Collider2D other)
     {
-        showMenu(booksCanvas);
+        showMenu(itemCanvas);
     }
 
 }

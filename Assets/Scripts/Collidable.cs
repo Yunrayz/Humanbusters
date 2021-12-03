@@ -6,21 +6,34 @@ using TMPro;
 
 public class Collidable : MonoBehaviour
 {
-    public ContactFilter2D filter;
-    public BoxCollider2D boxCollider;
+    protected ContactFilter2D filter;
+    protected BoxCollider2D boxCollider;
     private Collider2D[] hits = new Collider2D[10];
-    public bool actionMade = false;
+    protected bool actionMade = false;
     private Movement simon;
     private bool menuActive = false;
     public Canvas helperCanvas;
     public TMP_Text helperText;
-    private Vector3 menuPosition; 
+    private Vector2 menuPosition; 
+
+    protected Transform thisTransform;
+    protected Vector2 startPosition;
+    protected Vector2 newPosition;
+    public int menuOptions;
 
     protected virtual void Start(){
-        Vector3 objectPosition = gameObject.transform.position;
-        menuPosition = new Vector3(objectPosition.x, objectPosition.y+1.7f, objectPosition.z);
+        Vector2 objectPosition = gameObject.transform.position;
+        if(menuOptions == 2)
+            menuPosition = new Vector2(objectPosition.x, objectPosition.y+1.7f);
+        else if (menuOptions == 3)
+            {}
+        else
+            menuPosition = new Vector2(objectPosition.x, objectPosition.y+1.15f);
+
         boxCollider = GetComponent<BoxCollider2D>();
         simon = GameObject.FindWithTag("Player").GetComponent<Movement>();
+        thisTransform = transform;
+        startPosition = thisTransform.position;
     }
 
  
@@ -36,13 +49,18 @@ public class Collidable : MonoBehaviour
                 onCollide(boxCollider);
             hits[i] = null;
         }
-         
+                
+  
         
     }
-
+    protected void FixedUpdate(){
+        if(actionMade)
+            newPosition = thisTransform.position;
+        
+    }
     protected void helperTextGenerator(){
         if(!menuActive){
-            helperText.text = "Press F to interact";
+            helperText.text = "Press F to interact with " + boxCollider.name;
         }
         else{
              helperText.text = "Press ENTER to fire an action, ESC to close";
@@ -60,11 +78,13 @@ public class Collidable : MonoBehaviour
         canvas.gameObject.SetActive(false);
         menuActive = false;
         simon.canMove = true;
+        helperCanvas.gameObject.SetActive(false);
     }
 
     protected void makeAction(){
         actionMade = true;
     }
+
     protected virtual void showMenu(Canvas canvas){
         if(!actionMade){
         canvas.gameObject.transform.SetPositionAndRotation(menuPosition, Quaternion.identity);
