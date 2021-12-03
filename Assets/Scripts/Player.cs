@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public float moveSpeed;
     public Rigidbody2D rb;
     public Vector2 moveDirection;
+    public bool canMove = true;
 
     public int hp;
     private bool timeIsPassed;
@@ -21,8 +22,10 @@ public class Player : MonoBehaviour
     {
         
         ProcessInputs();
-        Move();
-        
+        if(canMove)
+            Move();
+        else
+            StopMovement();
     }
     void ProcessInputs(){
         float moveX = Input.GetAxisRaw("Horizontal");
@@ -36,7 +39,7 @@ public class Player : MonoBehaviour
 
     void StopMovement()
     {
-        rb.velocity = new Vector2(0, 0);
+        rb.velocity = Vector2.zero;
     }
 
 
