@@ -10,7 +10,7 @@ public class Collidable : MonoBehaviour
     protected BoxCollider2D boxCollider;
     private Collider2D[] hits = new Collider2D[10];
     protected bool actionMade = false;
-    private Player simon;
+    private Movement simon;
     private bool menuActive = false;
     public Canvas helperCanvas;
     public TMP_Text helperText;
@@ -31,7 +31,7 @@ public class Collidable : MonoBehaviour
             menuPosition = new Vector2(objectPosition.x, objectPosition.y+1.15f);
 
         boxCollider = GetComponent<BoxCollider2D>();
-        simon = GameObject.FindWithTag("Player").GetComponent<Player>();
+        simon = GameObject.FindWithTag("Player").GetComponent<Movement>();
         thisTransform = transform;
         startPosition = thisTransform.position;
     }
