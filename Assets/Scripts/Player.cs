@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     public int hp;
     private bool timeIsPassed;
 
+    public bool canMove = true;
+
 
     private void Start()
     {
@@ -19,9 +21,12 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        
         ProcessInputs();
-        Move();
+         if(canMove)
+            Move();
+        else
+            StopMovement();
+        
         
     }
     void ProcessInputs(){
