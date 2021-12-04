@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
         if (hp <= 0)
         {
             canMove = false;
-            rb.velocity = new Vector2(0, 0);
+            StopMovement();
         }
         else if (canMove)
             Move();

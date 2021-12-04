@@ -9,11 +9,14 @@ public class ObjectFunctions : MonoBehaviour
     private Rigidbody2D objectAction;
     private Vector2 throwImpulse;
 
+    private Component[] items;
+    private SpriteRenderer item;
+
      public void throwObject(Collider2D collider){
         action = "throw";
         collider.SendMessage("makeAction");
         collider.SendMessage("hideMenuHelper");
-        assetBroken = collider.gameObject.GetComponent<SpriteRenderer>().sprite.name + "Broken";
+        assetBroken = collider.GetComponent<SpriteRenderer>().sprite.name + "Broken";
         objectAction = collider.attachedRigidbody;
         oneThrow = true;
     }
@@ -22,13 +25,24 @@ public class ObjectFunctions : MonoBehaviour
         action = "drop";
         collider.SendMessage("makeAction");
         collider.SendMessage("hideMenuHelper");
-        assetBroken = collider.gameObject.GetComponent<SpriteRenderer>().sprite.name + "Broken";
+        assetBroken = collider.GetComponent<SpriteRenderer>().sprite.name + "Broken";
         objectAction = collider.attachedRigidbody;
         oneThrow = true;
      }
-     public void turnOnOffObject(Collider2D collider){
-         
-     }
+     public void turnOnObject(Collider2D collider){
+        collider.SendMessage("makeAction");
+        collider.SendMessage("hideMenuHelper");
+        if(collider.transform.childCount>1){
+            items = collider.GetComponentsInChildren<SpriteRenderer>();
+            foreach (SpriteRenderer item in items){
+                item.sprite = (Sprite)Resources.Load<Sprite>(item.sprite.name + "On") as Sprite;
+            }
+        }
+        else{
+            item = collider.GetComponent<SpriteRenderer>();
+            item.sprite = (Sprite)Resources.Load<Sprite>(item.sprite.name + "On") as Sprite;
+        }
+    }
 
      public void makeSoundObject(Collider2D collider){}
 
@@ -41,7 +55,9 @@ public class ObjectFunctions : MonoBehaviour
         oneThrow = false;
         if(action == "throw")
             yield return new WaitForSeconds(2);
-        //objectAction.gameObject.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load<Sprite>(assetBroken) as Sprite;
+        else
+            yield return new WaitForSeconds(1);
+        objectAction.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load<Sprite>(assetBroken) as Sprite;
     }
      void FixedUpdate(){
          if (oneThrow){

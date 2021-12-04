@@ -45,7 +45,7 @@ public class Collidable : MonoBehaviour
         boxCollider.OverlapCollider(filter, hits );
         for (int i = 0; i < hits.Length; i++)
         {
-            if(hits[i] == null)
+            if(hits[i] == null || hits[i].tag == "Ignore" || hits[i].tag == "Exorcist")
                 continue;
             if(!actionMade)    
                 helperTextGenerator();
@@ -94,11 +94,11 @@ public class Collidable : MonoBehaviour
     }
 
     protected virtual void showMenu(Canvas canvas){
-        if(!actionMade && this.gameObject.tag == "Interactive"){
+        if(!actionMade){
+        simon.canMove = false;
         canvas.gameObject.transform.SetPositionAndRotation(menuPosition, Quaternion.identity);
         canvas.gameObject.SetActive(true);
         menuActive = true;
-        simon.canMove = false;
         }
     }
 }
