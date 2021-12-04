@@ -58,82 +58,59 @@ public class Nun2 : MonoBehaviour
 
     private void Move()
     {
-        /*
+        
         if (walkingStop == 0)
         {
-            obj = new Vector2(-4.5f, 16f);
+            obj = new Vector2(-4.5f, -16f);
             transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, obj) < 0.01f)
                 walkingStop = 1;
         }
         else if (walkingStop == 1)
         {
-            obj = new Vector2(2.5f, -2.5f);
+            obj = new Vector2(-4.5f, -12f);
             transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, obj) < 0.01f)
                 walkingStop = 2;
         }
         else if (walkingStop == 2)
         {
-            obj = new Vector2(2.5f, 0f);
+            obj = new Vector2(-4.5f, -16f);
             transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, obj) < 0.01f)
                 walkingStop = 3;
         }
         else
         {
-            obj = new Vector2(-0.4f, 0.2f);
+            obj = new Vector2(5f, -16f);
             transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, obj) < 0.01f)
                 walkingStop = 0;
         }
-        */
-        if (Vector2.Distance(transform.position, new Vector2(-4.5f, 1)) < 0.1f)
-        {
-            direction = Vector2.down;
-            nunRb.velocity = speed * direction;
-        }
-        else if (Vector2.Distance(transform.position, new Vector2(-4.5f, -4)) < 0.1f && direction.Equals(Vector2.down))
-        {
-            direction = Vector2.right;
-            nunRb.velocity = speed * direction;
-        }
-        else if (Vector2.Distance(transform.position, new Vector2(5f, -4)) < 0.1f)
-        {
-            direction = Vector2.left;
-            nunRb.velocity = speed * direction;
-        }
-        else if (Vector2.Distance(transform.position, new Vector2(-4.5f, -4)) < 0.1f && direction.Equals(Vector2.left))
-        {
-            direction = Vector2.up;
-            nunRb.velocity = speed * direction;
-        }
-        else
-        {
-            nunRb.velocity = speed * direction;
-        }
+        
     }
 
     private void RunAway()
     {
+        if (!running)
+            obj = new Vector2(-4.5f, -16);
+
         running = true;
         speed = 2.5f;
 
-        if (transform.position.x < -4.3f)
-            stop = 1;
+        transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
 
-        switch (stop)
+        if (Vector2.Distance(transform.position, obj) < 0.01f || transform.position.y > -16)
         {
-            case 0:
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(-5.5f, -4), speed * Time.deltaTime);
-                if (Vector2.Distance(transform.position, new Vector2(-5.5f, -4)) < 0.01f)
-                    stop = 1;
-                break;
-            case 1:
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(-5.5f, 1), speed * Time.deltaTime);
-                if (Vector2.Distance(transform.position, new Vector2(-5.5f, 1)) < 0.01f)
-                    Destroy(this.gameObject);
-                break;
+            obj = new Vector2(-5.5f, -11f);
+            transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, obj) < 0.01f)
+            {
+                Destroy(this.gameObject);
+                //Destroy(GameObject.Find("Nun fearbar"));
+            }
         }
+
+
     }
 }
