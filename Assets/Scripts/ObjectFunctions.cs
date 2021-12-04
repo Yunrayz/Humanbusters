@@ -105,7 +105,7 @@ public class ObjectFunctions : MonoBehaviour
         else
             yield return new WaitForSeconds(1);
         if(assetBroken == objectAction.name + "Broken" && itemObject.isBreakable){
-            objectAction.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load<Sprite>(assetBroken) as Sprite;
+            objectAction.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load<Sprite>(itemObject.transform.parent.name + "/" + assetBroken) as Sprite;
         }
         
         if( audioComponent != null && !itemObject.isSwitchable){
