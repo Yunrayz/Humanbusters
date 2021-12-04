@@ -34,6 +34,10 @@ public class Man1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (fear >= fearLimit * 0.75)
+            speed = 2;
+
         if (fear >= fearLimit)
         {
             if (!running)
@@ -93,7 +97,7 @@ public class Man1 : MonoBehaviour
             obj = new Vector2(-1.8f, 1);
 
         running = true;
-        speed = 2.5f;
+        speed = 2.8f;
         transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
 
         if (Vector2.Distance(transform.position, obj) < 0.01f)
