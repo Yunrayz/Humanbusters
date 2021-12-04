@@ -61,7 +61,6 @@ public class Collidable : MonoBehaviour
         if (actionMade)
         {
             newPosition = thisTransform.position;
-            npcFunctions.posAction = newPosition;
         }        
     }
     protected void helperTextGenerator(){
@@ -90,6 +89,7 @@ public class Collidable : MonoBehaviour
     protected void makeAction(){
         actionMade = true;
         npcFunctions.actionTriggered = true;
+        npcFunctions.posAction = this.transform.position;
         simon.GetComponent<Player>().hp -= 10;
     }
 

@@ -7,28 +7,21 @@ public class NPCFunctions : MonoBehaviour
 
     public bool actionTriggered;
     public Vector2 posAction;
-    bool effectDone;
+    public bool effectDone;
+    int fear;
 
+    private void Start()
+    {
+        effectDone = false;
+    }
 
     public int getScared (Vector2 posNPC, Vector2 posAction, float radius)
     {
-        int fear;
-
+        fear = 0;
         if (Vector2.Distance(posNPC, posAction) < 2)
         {
             fear = 25;
-            effectDone = true;
-        } else
-        {
-            fear = 0;
-        }
-        
-        if (effectDone){
             actionTriggered = false;
-            effectDone = false;
-        } else
-        {
-            StartCoroutine(Waiting());
         }
 
         return fear;
@@ -42,7 +35,7 @@ public class NPCFunctions : MonoBehaviour
 
     IEnumerator Waiting()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         actionTriggered = false;
     }
 }
