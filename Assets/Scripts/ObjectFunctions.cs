@@ -61,11 +61,12 @@ public class ObjectFunctions : MonoBehaviour
 
      public void makeSoundObject(Collider2D collider){
         turnOn = !turnOn;
+        AudioSource audio = collider.GetComponent<AudioSource>();
         collider.SendMessage("hideMenuHelper");
         if(turnOn != false)
-            collider.GetComponent<AudioSource>().Play();
+            audio.Play();
         else
-            collider.GetComponent<AudioSource>().Stop();
+            audio.Stop();
      }
 
     IEnumerator throwAndChangeSprite(){
@@ -93,12 +94,8 @@ public class ObjectFunctions : MonoBehaviour
      }
 
      void throwForce(){
-           if(objectAction.transform.position.y < 0f && objectAction.transform.position.x < -3f){
-            throwImpulse = new Vector2(5f, 0f);
-        }
-            else{
-                throwImpulse = new Vector2(0f, -5f);
-        }
+            throwImpulseX();
+            throwImpulseY();
      }
      void dropForce(){
           if(objectAction.transform.position.y < 0f && objectAction.transform.position.x < -3f){
@@ -107,5 +104,17 @@ public class ObjectFunctions : MonoBehaviour
             else{
                 throwImpulse = new Vector2(0f, -2f);
         }
+     }
+     void throwImpulseX(){
+         if(objectAction.transform.position.x >2f)
+                   throwImpulse.x = Random.Range(-5f,2f);
+                else
+                    throwImpulse.x = Random.Range(-1f,5f);
+     }
+     void throwImpulseY(){
+          if(objectAction.transform.position.y < 0f)
+               throwImpulse.y = Random.Range(0f, 4f);
+            else
+                throwImpulse.y = Random.Range(-4f, 0f);
      }
 }
