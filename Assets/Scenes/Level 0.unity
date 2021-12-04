@@ -5392,6 +5392,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7004193638738590231, guid: 2c76cbf62e94e41cc8af04d40a62e352, type: 3}
   m_PrefabInstance: {fileID: 811515390}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &821778849 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3844573043261996928, guid: 57611230c84f471478dcf8727a892588, type: 3}
+  m_PrefabInstance: {fileID: 151278256}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &831319782
 GameObject:
   m_ObjectHideFlags: 0
@@ -9197,6 +9202,54 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224064450, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 324115428, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: NPC
+      value: 
+      objectReference: {fileID: 1785101116}
+    - target: {fileID: 522271040, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: NPC
+      value: 
+      objectReference: {fileID: 821778849}
+    - target: {fileID: 522271040, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: healthBarCorrection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 532013647, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1240895440, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1450991288, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1686516774, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1686516774, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779680396, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779680396, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065163332210857583, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6065163332383790264, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -9213,10 +9266,30 @@ PrefabInstance:
       propertyPath: NPC
       value: 
       objectReference: {fileID: 1793256905}
+    - target: {fileID: 6065163333493150499, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6065163333497618823, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 2122490447}
+    - target: {fileID: 6065163333610601749, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065163333650840329, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065163333854953839, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065163333865174753, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6065163334054983960, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -11618,6 +11691,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1785101116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6853202041635583013, guid: 26567c8bad08ad845a0102f8ec13f15f, type: 3}
+  m_PrefabInstance: {fileID: 1459827699}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1793256905 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5961766117009291672, guid: 42b4c7576a94c82449987cafe5efa441, type: 3}

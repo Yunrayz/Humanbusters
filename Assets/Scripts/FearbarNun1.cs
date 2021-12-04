@@ -25,7 +25,7 @@ public class FearbarNun1 : MonoBehaviour
         circle2Sprite = circle2.GetComponent<SpriteRenderer>();
 
         slider.minValue = 0;
-        slider.maxValue = fear;
+        slider.maxValue = NPC.GetComponent<Nun1>().fearLimit;
         slider.value = fear;
 
         fill.color = gradient.Evaluate(1f);
@@ -36,28 +36,35 @@ public class FearbarNun1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var fear = NPC.GetComponent<Nun1>().fear;
-
-        if (fear > 0)
+        if (NPC == null) 
         {
-            slider.value = fear;
-        
-            fill.color = gradient.Evaluate(slider.normalizedValue);
-            circle1Sprite.color = gradient.Evaluate(slider.normalizedValue);
-            circle2Sprite.color = gradient.Evaluate(slider.normalizedValue);
+            Destroy(gameObject);
         }
-       
-        if (fear <= 0)
+        else
         {
-            slider.value = fear;
-        
-            fill.color = gradient.Evaluate(slider.normalizedValue);
-            circle1Sprite.color = Color.clear;
-            circle2Sprite.color = Color.clear;
-        }
-        
-        Vector3 monsterPosition = new Vector3(NPC.transform.position.x, NPC.transform.position.y + healthBarCorrection, NPC.transform.position.z);
-        GetComponent<Transform>().position = monsterPosition;
+            var fear = NPC.GetComponent<Nun1>().fear;
 
+            if (fear > 0)
+            {
+                slider.value = fear;
+
+                fill.color = gradient.Evaluate(slider.normalizedValue);
+                circle1Sprite.color = gradient.Evaluate(slider.normalizedValue);
+                circle2Sprite.color = gradient.Evaluate(slider.normalizedValue);
+            }
+
+            if (fear <= 0)
+            {
+                slider.value = fear;
+
+                fill.color = gradient.Evaluate(slider.normalizedValue);
+                circle1Sprite.color = Color.clear;
+                circle2Sprite.color = Color.clear;
+            }
+
+            Vector3 monsterPosition = new Vector3(NPC.transform.position.x,
+                NPC.transform.position.y + healthBarCorrection, NPC.transform.position.z);
+            GetComponent<Transform>().position = monsterPosition;
+        }
     }
 }
