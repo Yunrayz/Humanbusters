@@ -9,7 +9,8 @@ public class Man1 : MonoBehaviour
     public int fearLimit = 100;     //limit of Fear before he runs away
     public float radius = 2;        //min distance between the NPC and the action for him to be affected
     private bool running;
-
+    private Vector2 obj;
+    private int walkingStop;
 
     //get from interaction scripts
 
@@ -23,6 +24,7 @@ public class Man1 : MonoBehaviour
     void Start()
     {
         neighborRb = GetComponent<Rigidbody2D>();
+        transform.position = new Vector2(-6, 1);
         fear = 0;
         functionsScript = GameObject.Find("GameManager").GetComponent<NPCFunctions>();
         audioSource = GetComponent<AudioSource>();
@@ -43,11 +45,7 @@ public class Man1 : MonoBehaviour
             RunAway();
         } else if (functionsScript.actionTriggered)
         {
-            if (functionsScript.checkDistance(transform.position, functionsScript.posAction, radius))
-            {
-                fear += 10;
-            }
-            functionsScript.actionTriggered = false;
+            fear += functionsScript.getScared(transform.position, functionsScript.posAction, radius);
         } else if (player.hp <= 0)
         {
             functionsScript.stopMovement(neighborRb);
@@ -60,34 +58,59 @@ public class Man1 : MonoBehaviour
 
     private void Move()
     {
-
-        if (transform.position.y >= 0)
+        if (walkingStop == 0)
         {
-            direction = Vector2.down;
-            neighborRb.velocity = speed * direction;
+            obj = new Vector2(-6, -2.5f);
+            transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, obj) < 0.01f)
+                walkingStop = 1;
         }
-        else if (transform.position.y <= -2.5)
+        else if (walkingStop == 1)
         {
-            direction = Vector2.up;
-            neighborRb.velocity = speed * direction;
+            obj = new Vector2(-1.8f, -2.5f);
+            transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, obj) < 0.01f)
+                walkingStop = 2;
+        }
+        else if (walkingStop == 2)
+        {
+            obj = new Vector2(-1.8f, 1f);
+            transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, obj) < 0.01f)
+                walkingStop = 3;
         }
         else
         {
-            neighborRb.velocity = speed * direction;
+            obj = new Vector2(-6, 1f);
+            transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, obj) < 0.01f)
+                walkingStop = 0;
         }
+
     }
 
 
     private void RunAway()
     {
+        if (!running)
+            obj = new Vector2(-1.8f, 1);
+
         running = true;
-        if (transform.position.y < 1)
-            neighborRb.velocity = speed * Vector2.up;
-        else if (transform.position.x < 5.5)
-            neighborRb.velocity = speed * Vector2.right;
-        else if (transform.position.y < 1.8)
-            neighborRb.velocity = speed * Vector2.up;
-        else
-            Destroy(this.gameObject);
+        speed = 2.5f;
+        transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
+
+        if (Vector2.Distance(transform.position, obj) < 0.01f)
+        {
+            obj = new Vector2(5.5f, 1.8f);
+            transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, obj) < 0.01f)
+            {
+                Destroy(this.gameObject);
+                Destroy(GameObject.Find("Man fearbar"));
+            }
+        }
+
     }
+
+    
 }

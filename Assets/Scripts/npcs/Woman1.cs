@@ -40,11 +40,7 @@ public class Woman1 : MonoBehaviour
             RunAway();
         } else if (functionsScript.actionTriggered)
         {
-            if (functionsScript.checkDistance(transform.position, functionsScript.posAction, radius))
-            {
-                fear += 10;
-            }
-            functionsScript.actionTriggered = false;
+            fear += functionsScript.getScared(transform.position, functionsScript.posAction, radius);
         }
         else if (player.hp <= 0)
         {
