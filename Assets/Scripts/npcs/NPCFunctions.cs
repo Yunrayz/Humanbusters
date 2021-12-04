@@ -22,7 +22,7 @@ public class NPCFunctions : MonoBehaviour
         float distance = Vector2.Distance(posNPC, posAction);
         if (distance < 2)
         {
-            fear = 25;
+            fear = 15;
             actionTriggered = false;
             if (distance < 0.8f)
             {
