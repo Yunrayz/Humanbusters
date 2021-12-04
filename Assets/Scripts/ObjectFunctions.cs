@@ -48,12 +48,13 @@ public class ObjectFunctions : MonoBehaviour
             items = collider.GetComponentsInChildren<SpriteRenderer>();
             foreach (SpriteRenderer item in items){
                 item.sprite = (Sprite)Resources.Load<Sprite>(item.sprite.name + "On") as Sprite;
-            }
+            } 
         }
         else{
             item = collider.GetComponent<SpriteRenderer>();
             item.sprite = (Sprite)Resources.Load<Sprite>(item.sprite.name + "On") as Sprite;
         }
+        collider.GetComponent<AudioSource>().Play();
     }
 
      public void makeSoundObject(Collider2D collider){

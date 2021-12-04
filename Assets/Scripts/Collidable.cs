@@ -18,24 +18,15 @@ public class Collidable : MonoBehaviour
 
     protected Transform thisTransform;
     protected Vector2 startPosition;
-    protected Vector2 newPosition;
+    protected Vector2 objectPosition;
     public int menuOptions;
 
     private NPCFunctions npcFunctions;
 
     protected virtual void Start(){
-        Vector2 objectPosition = gameObject.transform.position;
-        if(menuOptions == 2)
-            menuPosition = new Vector2(objectPosition.x, objectPosition.y+1.7f);
-        else if (menuOptions == 3)
-            {}
-        else
-            menuPosition = new Vector2(objectPosition.x, objectPosition.y+1.15f);
-
         boxCollider = GetComponent<BoxCollider2D>();
         simon = GameObject.FindWithTag("Player").GetComponent<Player>();
         thisTransform = transform;
-        startPosition = thisTransform.position;
 
         npcFunctions = GameObject.Find("GameManager").GetComponent<NPCFunctions>();
     }
@@ -58,10 +49,8 @@ public class Collidable : MonoBehaviour
         
     }
     protected void FixedUpdate(){
-        if (actionMade)
-        {
-            newPosition = thisTransform.position;
-        }        
+            objectPosition = thisTransform.position;
+            setMenuPosition(menuOptions, objectPosition);    
     }
     protected void helperTextGenerator(){
         if(!menuActive){
@@ -101,5 +90,14 @@ public class Collidable : MonoBehaviour
         canvas.gameObject.SetActive(true);
         menuActive = true;
         }
+    }
+
+    protected void setMenuPosition(int menuOptions, Vector2 objectPosition){
+        if(menuOptions == 2)
+            menuPosition = new Vector2(objectPosition.x, objectPosition.y+1.7f);
+        else if (menuOptions == 3)
+            {}
+        else
+            menuPosition = new Vector2(objectPosition.x, objectPosition.y+1.15f);
     }
 }
