@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Exorcist" && timeIsPassed)
         {
-            hp -= 5;
+            hp -= 8;
             timeIsPassed = false;
             StartCoroutine(Waiting());
         }
