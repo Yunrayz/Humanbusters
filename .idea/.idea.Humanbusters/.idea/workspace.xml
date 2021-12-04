@@ -5,7 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bb3b950-3363-4bf8-91b2-c3c17fd722e9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FearbarMan1.cs.meta~Health and Fear bars" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FearbarMan1.cs.meta~Health and Fear bars.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FearbarMan1.cs.meta~refs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FearbarMan1.cs.meta~refs/remotes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FearbarMan1.cs.meta~refs/remotes/origin.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FearbarMan1.cs.meta~refs/remotes/origin/npc-fixes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FearbarMan1.cs.meta~refs/remotes/origin/npc-fixes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Humanbusters/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Humanbusters/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/plantBroken.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/plantBroken.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Kitchen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Kitchen.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/living room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/living room.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FearbarMan1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FearbarMan1.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FearbarNun1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FearbarNun1.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/lamp.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/lamp.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/lamp2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/lamp2.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +34,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Fearbars/FearbarWoman1.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="20BMP6TDZ2qtyEcaZKnrRQdz4uN" />
   <component name="ProjectViewState">
@@ -68,6 +91,7 @@
       <workItem from="1638475808252" duration="74000" />
       <workItem from="1638475901285" duration="109000" />
       <workItem from="1638477726655" duration="2285000" />
+      <workItem from="1638627936295" duration="1633000" />
     </task>
     <servers />
   </component>
@@ -77,6 +101,17 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
