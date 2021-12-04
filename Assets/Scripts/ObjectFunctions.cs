@@ -11,10 +11,14 @@ public class ObjectFunctions : MonoBehaviour
 
     private Component[] items;
     private SpriteRenderer item;
+    private bool turnOn = false;
 
      public void throwObject(Collider2D collider){
         action = "throw";
-        collider.SendMessage("makeAction");
+        if(collider.name != "books")
+        {
+            collider.SendMessage("makeAction");
+        }
         collider.SendMessage("hideMenuHelper");
         assetBroken = collider.GetComponent<SpriteRenderer>().sprite.name + "Broken";
         objectAction = collider.attachedRigidbody;
@@ -44,7 +48,14 @@ public class ObjectFunctions : MonoBehaviour
         }
     }
 
-     public void makeSoundObject(Collider2D collider){}
+     public void makeSoundObject(Collider2D collider){
+        turnOn = !turnOn;
+        collider.SendMessage("hideMenuHelper");
+        if(turnOn != false)
+            collider.GetComponent<AudioSource>().Play();
+        else
+            collider.GetComponent<AudioSource>().Stop();
+     }
 
     IEnumerator throwAndChangeSprite(){
         if (action == "throw")
@@ -57,7 +68,12 @@ public class ObjectFunctions : MonoBehaviour
             yield return new WaitForSeconds(2);
         else
             yield return new WaitForSeconds(1);
-        objectAction.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load<Sprite>(assetBroken) as Sprite;
+        if(assetBroken == objectAction.name + "Broken"){
+            objectAction.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load<Sprite>(assetBroken) as Sprite;
+        }
+        if(objectAction.GetComponent<AudioSource>() != null){
+            objectAction.GetComponent<AudioSource>().Play();
+        }
     }
      void FixedUpdate(){
          if (oneThrow){
