@@ -1309,7 +1309,7 @@ GameObject:
   - component: {fileID: 263979152}
   - component: {fileID: 263979155}
   - component: {fileID: 263979154}
-  - component: {fileID: 263979153}
+  - component: {fileID: 263979156}
   m_Layer: 0
   m_Name: Door (1)
   m_TagString: Untagged
@@ -1333,18 +1333,6 @@ Transform:
   m_Father: {fileID: 2118953751}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &263979153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263979151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1784f49dfe98ce34db8c907362789c9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &263979154
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1358,7 +1346,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.62399244}
+  m_Offset: {x: -0.0061485767, y: -0.62399244}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1369,7 +1357,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7228785}
+  m_Size: {x: 0.9658303, y: 1.7228785}
   m_EdgeRadius: 0
 --- !u!50 &263979155
 Rigidbody2D:
@@ -1392,6 +1380,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &263979156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263979151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17020b8ebe45684eaab5cd8d2db5b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &276400041
 GameObject:
   m_ObjectHideFlags: 0
@@ -6484,9 +6484,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1172379962}
   - component: {fileID: 1172379961}
-  - component: {fileID: 1172379965}
   - component: {fileID: 1172379964}
   - component: {fileID: 1172379963}
+  - component: {fileID: 1172379965}
   m_Layer: 0
   m_Name: door side
   m_TagString: Untagged
@@ -6572,7 +6572,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.025444109, y: 0}
+  m_Offset: {x: 0.025444105, y: -0.008119941}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6583,7 +6583,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.20678759, y: 1}
+  m_Size: {x: 0.20678759, y: 1.0103679}
   m_EdgeRadius: 0
 --- !u!50 &1172379964
 Rigidbody2D:
@@ -6615,7 +6615,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1172379960}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1784f49dfe98ce34db8c907362789c9b, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b6a869bd99247744b9e0542ccd76c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1179051511
