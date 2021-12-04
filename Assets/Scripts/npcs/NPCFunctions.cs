@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NPCFunctions : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class NPCFunctions : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
+        if (SceneManager.GetActiveScene().name == "Level 0")
+            player = GameObject.Find("Player").GetComponent<Player>();
     }
 
 

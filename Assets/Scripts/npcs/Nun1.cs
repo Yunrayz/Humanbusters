@@ -24,7 +24,7 @@ public class Nun1 : MonoBehaviour
         fear = 0;
         nunRb = GetComponent<Rigidbody2D>();
         audioSource = transform.GetComponent<AudioSource>();
-        functionsScript = GameObject.Find("GameManager").GetComponent<NPCFunctions>();
+        functionsScript = GameObject.Find("Game Manager").GetComponent<NPCFunctions>();
         running = false;
         player = GameObject.Find("Player").GetComponent<Player>();
     }
