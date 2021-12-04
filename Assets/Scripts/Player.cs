@@ -40,6 +40,8 @@ public class Player : MonoBehaviour
             Move();
         else
             StopMovement();
+
+
         if(!man.running && man.fear >= man.fearLimit){
             GetComponent<AudioSource>().Play();
         }

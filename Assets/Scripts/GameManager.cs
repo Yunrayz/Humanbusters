@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public Canvas mainMenu;
+    public Canvas menu;
     public Canvas gameOver;
 
     // Start is called before the first frame update
@@ -28,18 +28,16 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        SceneManager.LoadScene("Main Menu");
-
-        GameObject.Find("MainMenu").SetActive(false);
-        GameObject.Find("Game Over").SetActive(true);
-
-        //mainMenu.gameObject.SetActive(false);
-        gameOver.gameObject.SetActive(true);
+        SceneManager.LoadScene("Game Over");
     }
 
     public void GoToMainMenu()
     {
-        gameOver.gameObject.SetActive(false);
-        mainMenu.gameObject.SetActive(true);
+        SceneManager.LoadScene("Main Menu");
+    }
+
+    public void ExitApp()
+    {
+        Application.Quit();
     }
 }

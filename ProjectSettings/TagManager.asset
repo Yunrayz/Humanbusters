@@ -8,6 +8,7 @@ TagManager:
   - Object
   - Interactive
   - Ignore
+  - canvas
   layers:
   - Default
   - TransparentFX
