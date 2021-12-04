@@ -104,6 +104,7 @@ MonoBehaviour:
   menuOptions: 1
   itemCanvas: {fileID: 3423067338422310439}
   switchable: 0
+  isBreakable: 1
 --- !u!61 &6557392478573061516
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -117,7 +118,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1270988, y: -1.1489277}
+  m_Offset: {x: -0.20335817, y: -1.7588558}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -128,7 +129,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.49160433, y: 1.0851059}
+  m_Size: {x: 0.59328365, y: 1.3404236}
   m_EdgeRadius: 0
 --- !u!50 &6557392478573061517
 Rigidbody2D:

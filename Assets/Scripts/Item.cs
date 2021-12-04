@@ -5,7 +5,8 @@ using UnityEngine;
 public class Item : Collidable
 {
     public Canvas itemCanvas;
-    public bool switchable;
+    public bool isSwitchable;
+    public bool isBreakable;
     protected override void Start()
     {
         base.Start();
