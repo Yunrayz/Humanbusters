@@ -46,6 +46,8 @@ public class ObjectFunctions : MonoBehaviour
         collider.SendMessage("hideMenuHelper");
         assetBroken = collider.GetComponent<SpriteRenderer>().sprite.name + "Broken";
         objectAction = collider.attachedRigidbody;
+        itemObject = collider.GetComponent<Item>();
+        audioComponent = objectAction.GetComponent<AudioSource>();
         oneThrow = true;
      }
      public void turnOnObject(Collider2D collider){
