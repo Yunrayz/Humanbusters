@@ -1309,9 +1309,9 @@ GameObject:
   - component: {fileID: 263979152}
   - component: {fileID: 263979155}
   - component: {fileID: 263979154}
-  - component: {fileID: 263979156}
+  - component: {fileID: 263979153}
   m_Layer: 0
-  m_Name: Door (1)
+  m_Name: kitchen door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1333,6 +1333,18 @@ Transform:
   m_Father: {fileID: 2118953751}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &263979153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263979151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e17020b8ebe45684eaab5cd8d2db5b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &263979154
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1380,18 +1392,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &263979156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263979151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e17020b8ebe45684eaab5cd8d2db5b44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &276400041
 GameObject:
   m_ObjectHideFlags: 0

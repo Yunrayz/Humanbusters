@@ -14,14 +14,22 @@ public class doorL : MonoBehaviour
         mainCamera = GameObject.Find("Main Camera");
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            changeRoom();
+            
+        }
+    }
+
+    private void changeRoom()
+    {
+        if (Vector2.Distance(player.transform.position, new Vector2(5.6f, -4.5f)) < 0.5)
         {
             mainCamera.transform.position = new Vector3(0, -12, -10);
             player.transform.position = new Vector3(-5.4f, -11f, 0);
-            player.GetComponent<Rigidbody2D>().AddForce(10f * Vector2.down * Time.deltaTime);
+            player.GetComponent<Rigidbody2D>().AddForce(10f * Vector2.down);
         }
-
     }
 }
