@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FearbarMan1 : MonoBehaviour
+public class FearbarWoman1 : MonoBehaviour
 {
     public Slider slider;
     public Gradient gradient;
@@ -20,12 +20,12 @@ public class FearbarMan1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var fear = NPC.GetComponent<Man1>().fear;
+        var fear = NPC.GetComponent<Woman1>().fear;
         circle1Sprite = circle1.GetComponent<SpriteRenderer>();
         circle2Sprite = circle2.GetComponent<SpriteRenderer>();
 
         slider.minValue = 0;
-        slider.maxValue = NPC.GetComponent<Man1>().fearLimit;
+        slider.maxValue = NPC.GetComponent<Woman1>().fearLimit;
         slider.value = fear;
 
         fill.color = gradient.Evaluate(1f);
@@ -42,7 +42,7 @@ public class FearbarMan1 : MonoBehaviour
         }
         else
         {
-            var fear = NPC.GetComponent<Man1>().fear;
+            var fear = NPC.GetComponent<Woman1>().fear;
 
             if (fear > 0)
             {
