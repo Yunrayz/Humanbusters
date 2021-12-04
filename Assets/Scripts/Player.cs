@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
         timeIsPassed = true;
         rb = GetComponent<Rigidbody2D>();
         moveSpeed = 5;
-        hp = 150;
+        hp = 100;
         man = GameObject.Find("Man1").GetComponent<Man1>();
 
     }
@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Exorcist" && timeIsPassed)
         {
-            hp -= 5;
+            hp -= 8;
             timeIsPassed = false;
             StartCoroutine(Waiting());
         }

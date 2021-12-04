@@ -25,6 +25,8 @@ public class ObjectFunctions : MonoBehaviour
             NPCFunctions npcFunctions = GameObject.Find("GameManager").GetComponent<NPCFunctions>();
             npcFunctions.actionTriggered = true;
             npcFunctions.posAction = collider.transform.position;
+            Player player = GameObject.Find("Player").GetComponent<Player>();
+            player.hp -= 10;
         }
 
         collider.SendMessage("hideMenuHelper");

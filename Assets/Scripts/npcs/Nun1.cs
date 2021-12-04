@@ -32,6 +32,10 @@ public class Nun1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (fear >= fearLimit * 0.75)
+            speed = 2;
+
         if (fear >= fearLimit)
         {
             if (!running)
@@ -88,6 +92,9 @@ public class Nun1 : MonoBehaviour
 
     private void RunAway()
     {
+        running = true;
+        speed = 2.8f;
+
         obj = new Vector2(5.5f, 1.8f);
         transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
         if (Vector2.Distance(transform.position, obj) < 0.01f)
