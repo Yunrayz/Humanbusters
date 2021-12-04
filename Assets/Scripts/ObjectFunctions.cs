@@ -10,13 +10,16 @@ public class ObjectFunctions : MonoBehaviour
     private Vector2 throwImpulse;
 
     private Component[] items;
-    private SpriteRenderer item;
+    private SpriteRenderer spriteComponent;
     private bool turnOn = false;
+
+    private Item itemObject;
+    private AudioSource audioComponent;
 
      public void throwObject(Collider2D collider)
     {
         action = "throw";
-        if(collider.name != "books")
+        if(collider.name != "books" && collider.name != "chair")
         {
             collider.SendMessage("makeAction");
         }
@@ -33,6 +36,8 @@ public class ObjectFunctions : MonoBehaviour
         assetBroken = collider.GetComponent<SpriteRenderer>().sprite.name + "Broken";
         objectAction = collider.attachedRigidbody;
         oneThrow = true;
+        itemObject = collider.GetComponent<Item>();
+        audioComponent = objectAction.GetComponent<AudioSource>();
     }
 
      public void dropObject(Collider2D collider){
@@ -41,32 +46,51 @@ public class ObjectFunctions : MonoBehaviour
         collider.SendMessage("hideMenuHelper");
         assetBroken = collider.GetComponent<SpriteRenderer>().sprite.name + "Broken";
         objectAction = collider.attachedRigidbody;
+        itemObject = collider.GetComponent<Item>();
+        audioComponent = objectAction.GetComponent<AudioSource>();
         oneThrow = true;
      }
      public void turnOnObject(Collider2D collider){
-        collider.SendMessage("makeAction");
+        turnOn = !turnOn;
+        audioComponent = collider.GetComponent<AudioSource>();
         collider.SendMessage("hideMenuHelper");
+        if(turnOn == true){
         if(collider.transform.childCount>1){
             items = collider.GetComponentsInChildren<SpriteRenderer>();
-            foreach (SpriteRenderer item in items){
-                item.sprite = (Sprite)Resources.Load<Sprite>(item.sprite.name + "On") as Sprite;
+            foreach (SpriteRenderer spriteComponent in items){
+                spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(spriteComponent.sprite.name + "On") as Sprite;
             } 
         }
         else{
-            item = collider.GetComponent<SpriteRenderer>();
-            item.sprite = (Sprite)Resources.Load<Sprite>(item.sprite.name + "On") as Sprite;
+            spriteComponent = collider.GetComponent<SpriteRenderer>();
+            spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(spriteComponent.sprite.name + "On") as Sprite;
         }
-        collider.GetComponent<AudioSource>().Play();
+        
+        audioComponent.Play();
+        }
+        else{
+            if(collider.transform.childCount>1){
+            items = collider.GetComponentsInChildren<SpriteRenderer>();
+            foreach (SpriteRenderer spriteComponent in items){
+                spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(spriteComponent.name) as Sprite;
+            } 
+        }
+        else{
+            spriteComponent = collider.GetComponent<SpriteRenderer>();
+            spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(spriteComponent.name) as Sprite;
+        }
+        audioComponent.Stop();
+        }
     }
 
      public void makeSoundObject(Collider2D collider){
         turnOn = !turnOn;
-        AudioSource audio = collider.GetComponent<AudioSource>();
+        audioComponent = collider.GetComponent<AudioSource>();
         collider.SendMessage("hideMenuHelper");
         if(turnOn != false)
-            audio.Play();
+            audioComponent.Play();
         else
-            audio.Stop();
+            audioComponent.Stop();
      }
 
     IEnumerator throwAndChangeSprite(){
@@ -80,11 +104,15 @@ public class ObjectFunctions : MonoBehaviour
             yield return new WaitForSeconds(2);
         else
             yield return new WaitForSeconds(1);
-        if(assetBroken == objectAction.name + "Broken"){
+        if(assetBroken == objectAction.name + "Broken" && itemObject.isBreakable){
             objectAction.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load<Sprite>(assetBroken) as Sprite;
         }
-        if(objectAction.GetComponent<AudioSource>() != null){
-            objectAction.GetComponent<AudioSource>().Play();
+        
+        if( audioComponent != null && !itemObject.isSwitchable){
+            audioComponent.Play();
+        }
+        if (audioComponent != null & itemObject.isSwitchable){
+            audioComponent.PlayOneShot(Resources.Load(audioComponent.name + "Sound") as AudioClip);
         }
     }
      void FixedUpdate(){
