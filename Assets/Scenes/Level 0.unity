@@ -7088,6 +7088,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nun1
       objectReference: {fileID: 0}
+    - target: {fileID: 5961766117009291678, guid: 42b4c7576a94c82449987cafe5efa441, type: 3}
+      propertyPath: m_Size.x
+      value: 0.64474624
+      objectReference: {fileID: 0}
+    - target: {fileID: 5961766117009291678, guid: 42b4c7576a94c82449987cafe5efa441, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5308588
+      objectReference: {fileID: 0}
+    - target: {fileID: 5961766117009291678, guid: 42b4c7576a94c82449987cafe5efa441, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.008458465
+      objectReference: {fileID: 0}
+    - target: {fileID: 5961766117009291678, guid: 42b4c7576a94c82449987cafe5efa441, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.03333488
+      objectReference: {fileID: 0}
     - target: {fileID: 5961766117009291679, guid: 42b4c7576a94c82449987cafe5efa441, type: 3}
       propertyPath: m_RootOrder
       value: 9
