@@ -13,12 +13,20 @@ public class ObjectFunctions : MonoBehaviour
     private SpriteRenderer item;
     private bool turnOn = false;
 
-     public void throwObject(Collider2D collider){
+     public void throwObject(Collider2D collider)
+    {
         action = "throw";
         if(collider.name != "books")
         {
             collider.SendMessage("makeAction");
         }
+        else
+        {
+            NPCFunctions npcFunctions = GameObject.Find("GameManager").GetComponent<NPCFunctions>();
+            npcFunctions.actionTriggered = true;
+            npcFunctions.posAction = collider.transform.position;
+        }
+
         collider.SendMessage("hideMenuHelper");
         assetBroken = collider.GetComponent<SpriteRenderer>().sprite.name + "Broken";
         objectAction = collider.attachedRigidbody;

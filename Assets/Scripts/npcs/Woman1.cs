@@ -38,9 +38,6 @@ public class Woman1 : MonoBehaviour
             if (!running)
                 audioSource.Play();
             RunAway();
-        } else if (functionsScript.actionTriggered)
-        {
-            fear += functionsScript.getScared(transform.position, functionsScript.posAction, radius);
         }
         else if (player.hp <= 0)
         {
@@ -49,6 +46,10 @@ public class Woman1 : MonoBehaviour
         else
         {
             Move();
+            if (functionsScript.actionTriggered)
+            {
+                fear += functionsScript.getScared(transform.position, functionsScript.posAction, radius);
+            }
         }
 
     }

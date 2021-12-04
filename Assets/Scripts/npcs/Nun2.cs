@@ -10,6 +10,8 @@ public class Nun2 : MonoBehaviour
     public float radius = 2;        //min distance between the NPC and the action for him to be affected
     private bool running;
     private int stop;
+    private int walkingStop;
+    private Vector2 obj;
 
 
     private Rigidbody2D nunRb;
@@ -39,23 +41,53 @@ public class Nun2 : MonoBehaviour
                 audioSource.Play();
             RunAway();
         }
-        else if (functionsScript.actionTriggered)
-        {
-            fear += functionsScript.getScared(transform.position, functionsScript.posAction, radius);
-        }
         else if (player.hp <= 0)
         {
             functionsScript.stopMovement(nunRb);
         }
         else
         {
-            Move();
+            Move(); 
+            if (functionsScript.actionTriggered)
+            {
+                fear += functionsScript.getScared(transform.position, functionsScript.posAction, radius);
+            }
         }
 
     }
 
     private void Move()
     {
+        /*
+        if (walkingStop == 0)
+        {
+            obj = new Vector2(-4.5f, 16f);
+            transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, obj) < 0.01f)
+                walkingStop = 1;
+        }
+        else if (walkingStop == 1)
+        {
+            obj = new Vector2(2.5f, -2.5f);
+            transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, obj) < 0.01f)
+                walkingStop = 2;
+        }
+        else if (walkingStop == 2)
+        {
+            obj = new Vector2(2.5f, 0f);
+            transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, obj) < 0.01f)
+                walkingStop = 3;
+        }
+        else
+        {
+            obj = new Vector2(-0.4f, 0.2f);
+            transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, obj) < 0.01f)
+                walkingStop = 0;
+        }
+        */
         if (Vector2.Distance(transform.position, new Vector2(-4.5f, 1)) < 0.1f)
         {
             direction = Vector2.down;
