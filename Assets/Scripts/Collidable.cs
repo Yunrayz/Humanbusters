@@ -21,6 +21,8 @@ public class Collidable : MonoBehaviour
     protected Vector2 newPosition;
     public int menuOptions;
 
+    private NPCFunctions npcFunctions;
+
     protected virtual void Start(){
         Vector2 objectPosition = gameObject.transform.position;
         if(menuOptions == 2)
@@ -34,6 +36,8 @@ public class Collidable : MonoBehaviour
         simon = GameObject.FindWithTag("Player").GetComponent<Player>();
         thisTransform = transform;
         startPosition = thisTransform.position;
+
+        npcFunctions = GameObject.Find("GameManager").GetComponent<NPCFunctions>();
     }
 
  
@@ -54,9 +58,11 @@ public class Collidable : MonoBehaviour
         
     }
     protected void FixedUpdate(){
-        if(actionMade)
+        if (actionMade)
+        {
             newPosition = thisTransform.position;
-        
+            npcFunctions.posAction = newPosition;
+        }        
     }
     protected void helperTextGenerator(){
         if(!menuActive){
@@ -83,10 +89,12 @@ public class Collidable : MonoBehaviour
 
     protected void makeAction(){
         actionMade = true;
+        npcFunctions.actionTriggered = true;
+        simon.GetComponent<Player>().hp -= 10;
     }
 
     protected virtual void showMenu(Canvas canvas){
-        if(!actionMade){
+        if(!actionMade && this.gameObject.tag == "Interactive"){
         canvas.gameObject.transform.SetPositionAndRotation(menuPosition, Quaternion.identity);
         canvas.gameObject.SetActive(true);
         menuActive = true;

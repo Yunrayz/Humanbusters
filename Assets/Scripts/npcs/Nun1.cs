@@ -9,12 +9,7 @@ public class Nun1 : MonoBehaviour
     public int fearLimit = 100;     //limit of Fear before he runs away
     public float radius = 2;        //min distance between the NPC and the action for him to be affected
     private bool running;
-
-
-    //get from interaction scripts
-    public bool actionTriggered = false;
-    public float xPosAction = 5;
-    public float yPosAction = 5;
+    private Player player;
 
 
     private Rigidbody2D nunRb;
@@ -29,26 +24,29 @@ public class Nun1 : MonoBehaviour
         fear = 0;
         functionsScript = GameObject.Find("GameManager").GetComponent<NPCFunctions>();
         running = false;
+        player = GameObject.Find("Player").GetComponent<Player>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (actionTriggered)
-        {
-            if (functionsScript.checkDistance(xPosAction, yPosAction, radius))
-            {
-                fear += 100;
-                audioSource.Play();
-            }
-        }
-
         if (fear > fearLimit)
         {
             if (!running)
                 audioSource.Play();
             RunAway();
+        }
+        else if (functionsScript.actionTriggered)
+        {
+            if (functionsScript.checkDistance(transform.position, functionsScript.posAction, radius))
+            {
+                fear += 10;
+            }
+            functionsScript.actionTriggered = false;
+        }
+        else if (player.hp <= 0)
+        {
+            functionsScript.stopMovement(nunRb);
         }
         else
         {
