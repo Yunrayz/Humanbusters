@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
         timeIsPassed = true;
         rb = GetComponent<Rigidbody2D>();
         moveSpeed = 5;
-        hp = 100;
+        hp = 150;
 
     }
 

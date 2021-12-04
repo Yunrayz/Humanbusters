@@ -10,6 +10,8 @@ public class Nun2 : MonoBehaviour
     public float radius = 2;        //min distance between the NPC and the action for him to be affected
     private bool running;
     private int stop;
+    private int walkingStop;
+    private Vector2 obj;
 
 
     private Rigidbody2D nunRb;
@@ -39,69 +41,76 @@ public class Nun2 : MonoBehaviour
                 audioSource.Play();
             RunAway();
         }
-        else if (functionsScript.actionTriggered)
-        {
-            fear += functionsScript.getScared(transform.position, functionsScript.posAction, radius);
-        }
         else if (player.hp <= 0)
         {
             functionsScript.stopMovement(nunRb);
         }
         else
         {
-            Move();
+            Move(); 
+            if (functionsScript.actionTriggered)
+            {
+                fear += functionsScript.getScared(transform.position, functionsScript.posAction, radius);
+            }
         }
 
     }
 
     private void Move()
     {
-        if (Vector2.Distance(transform.position, new Vector2(-4.5f, 1)) < 0.1f)
+        
+        if (walkingStop == 0)
         {
-            direction = Vector2.down;
-            nunRb.velocity = speed * direction;
+            obj = new Vector2(-4.5f, -16f);
+            transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, obj) < 0.01f)
+                walkingStop = 1;
         }
-        else if (Vector2.Distance(transform.position, new Vector2(-4.5f, -4)) < 0.1f && direction.Equals(Vector2.down))
+        else if (walkingStop == 1)
         {
-            direction = Vector2.right;
-            nunRb.velocity = speed * direction;
+            obj = new Vector2(-4.5f, -12f);
+            transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, obj) < 0.01f)
+                walkingStop = 2;
         }
-        else if (Vector2.Distance(transform.position, new Vector2(5f, -4)) < 0.1f)
+        else if (walkingStop == 2)
         {
-            direction = Vector2.left;
-            nunRb.velocity = speed * direction;
-        }
-        else if (Vector2.Distance(transform.position, new Vector2(-4.5f, -4)) < 0.1f && direction.Equals(Vector2.left))
-        {
-            direction = Vector2.up;
-            nunRb.velocity = speed * direction;
+            obj = new Vector2(-4.5f, -16f);
+            transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, obj) < 0.01f)
+                walkingStop = 3;
         }
         else
         {
-            nunRb.velocity = speed * direction;
+            obj = new Vector2(5f, -16f);
+            transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, obj) < 0.01f)
+                walkingStop = 0;
         }
+        
     }
 
     private void RunAway()
     {
+        if (!running)
+            obj = new Vector2(-4.5f, -16);
+
         running = true;
         speed = 2.5f;
 
-        if (transform.position.x < -4.3f)
-            stop = 1;
+        transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
 
-        switch (stop)
+        if (Vector2.Distance(transform.position, obj) < 0.01f || transform.position.y > -16)
         {
-            case 0:
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(-5.5f, -4), speed * Time.deltaTime);
-                if (Vector2.Distance(transform.position, new Vector2(-5.5f, -4)) < 0.01f)
-                    stop = 1;
-                break;
-            case 1:
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(-5.5f, 1), speed * Time.deltaTime);
-                if (Vector2.Distance(transform.position, new Vector2(-5.5f, 1)) < 0.01f)
-                    Destroy(this.gameObject);
-                break;
+            obj = new Vector2(-5.5f, -11f);
+            transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, obj) < 0.01f)
+            {
+                Destroy(this.gameObject);
+                //Destroy(GameObject.Find("Nun fearbar"));
+            }
         }
+
+
     }
 }

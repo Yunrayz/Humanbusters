@@ -93,6 +93,7 @@ public class Collidable : MonoBehaviour
         simon.GetComponent<Player>().hp -= 10;
     }
 
+
     protected virtual void showMenu(Canvas canvas){
         if(!actionMade){
         simon.canMove = false;

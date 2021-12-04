@@ -23,9 +23,8 @@ public class Man1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        neighborRb = GetComponent<Rigidbody2D>();
-        transform.position = new Vector2(-6, 1);
         fear = 0;
+        neighborRb = GetComponent<Rigidbody2D>();
         functionsScript = GameObject.Find("GameManager").GetComponent<NPCFunctions>();
         audioSource = GetComponent<AudioSource>();
         running = false;
@@ -40,16 +39,16 @@ public class Man1 : MonoBehaviour
             if (!running)
                 audioSource.Play();
             RunAway();
-        } else if (functionsScript.actionTriggered)
-        {
-            fear += functionsScript.getScared(transform.position, functionsScript.posAction, radius);
-
         } else if (player.hp <= 0)
         {
             functionsScript.stopMovement(neighborRb);
         }
         else { 
-            Move(); 
+            Move();
+            if (functionsScript.actionTriggered)
+            {
+                fear += functionsScript.getScared(transform.position, functionsScript.posAction, radius);
+            }
         }
 
     }
