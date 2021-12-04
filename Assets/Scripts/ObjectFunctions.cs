@@ -51,8 +51,10 @@ public class ObjectFunctions : MonoBehaviour
         oneThrow = true;
      }
      public void turnOnObject(Collider2D collider){
-        collider.SendMessage("makeAction");
+        turnOn = !turnOn;
+        audioComponent = collider.GetComponent<AudioSource>();
         collider.SendMessage("hideMenuHelper");
+        if(turnOn == true){
         if(collider.transform.childCount>1){
             items = collider.GetComponentsInChildren<SpriteRenderer>();
             foreach (SpriteRenderer spriteComponent in items){
@@ -63,7 +65,22 @@ public class ObjectFunctions : MonoBehaviour
             spriteComponent = collider.GetComponent<SpriteRenderer>();
             spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(spriteComponent.sprite.name + "On") as Sprite;
         }
-        collider.GetComponent<AudioSource>().Play();
+        
+        audioComponent.Play();
+        }
+        else{
+            if(collider.transform.childCount>1){
+            items = collider.GetComponentsInChildren<SpriteRenderer>();
+            foreach (SpriteRenderer spriteComponent in items){
+                spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(spriteComponent.name) as Sprite;
+            } 
+        }
+        else{
+            spriteComponent = collider.GetComponent<SpriteRenderer>();
+            spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(spriteComponent.name) as Sprite;
+        }
+        audioComponent.Stop();
+        }
     }
 
      public void makeSoundObject(Collider2D collider){
