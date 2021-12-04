@@ -4551,11 +4551,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!223 &591986034 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 7004193638947005995, guid: 2c76cbf62e94e41cc8af04d40a62e352, type: 3}
-  m_PrefabInstance: {fileID: 811515390}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &616965297
 GameObject:
   m_ObjectHideFlags: 0
@@ -5311,26 +5306,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 831319783}
     m_Modifications:
-    - target: {fileID: 1856830066383414517, guid: 2c76cbf62e94e41cc8af04d40a62e352, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 276400043}
-    - target: {fileID: 1856830066521468317, guid: 2c76cbf62e94e41cc8af04d40a62e352, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 276400043}
     - target: {fileID: 7004193638738590224, guid: 2c76cbf62e94e41cc8af04d40a62e352, type: 3}
       propertyPath: helperText
       value: 
       objectReference: {fileID: 1341864758}
-    - target: {fileID: 7004193638738590224, guid: 2c76cbf62e94e41cc8af04d40a62e352, type: 3}
-      propertyPath: itemCanvas
-      value: 
-      objectReference: {fileID: 591986034}
-    - target: {fileID: 7004193638738590224, guid: 2c76cbf62e94e41cc8af04d40a62e352, type: 3}
-      propertyPath: menuOptions
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7004193638738590224, guid: 2c76cbf62e94e41cc8af04d40a62e352, type: 3}
       propertyPath: helperCanvas
       value: 
@@ -5338,10 +5317,6 @@ PrefabInstance:
     - target: {fileID: 7004193638738590229, guid: 2c76cbf62e94e41cc8af04d40a62e352, type: 3}
       propertyPath: m_Name
       value: plant
-      objectReference: {fileID: 0}
-    - target: {fileID: 7004193638738590229, guid: 2c76cbf62e94e41cc8af04d40a62e352, type: 3}
-      propertyPath: m_TagString
-      value: Interactive
       objectReference: {fileID: 0}
     - target: {fileID: 7004193638738590231, guid: 2c76cbf62e94e41cc8af04d40a62e352, type: 3}
       propertyPath: m_RootOrder
@@ -5387,26 +5362,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7004193638947005994, guid: 2c76cbf62e94e41cc8af04d40a62e352, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7004193639087051026, guid: 2c76cbf62e94e41cc8af04d40a62e352, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 276400043}
-    - target: {fileID: 7004193639087051026, guid: 2c76cbf62e94e41cc8af04d40a62e352, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: throwObject
-      objectReference: {fileID: 0}
     - target: {fileID: 7004193639217698938, guid: 2c76cbf62e94e41cc8af04d40a62e352, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 276400043}
-    - target: {fileID: 7004193639217698938, guid: 2c76cbf62e94e41cc8af04d40a62e352, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: dropObject
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c76cbf62e94e41cc8af04d40a62e352, type: 3}
 --- !u!4 &811515391 stripped
@@ -12641,6 +12604,7 @@ GameObject:
   - component: {fileID: 2146407045}
   - component: {fileID: 2146407044}
   - component: {fileID: 2146407043}
+  - component: {fileID: 2146407046}
   m_Layer: 0
   m_Name: Lamp
   m_TagString: Untagged
@@ -12728,6 +12692,102 @@ MonoBehaviour:
   menuOptions: 2
   itemCanvas: {fileID: 280925449}
   switchable: 0
+--- !u!82 &2146407046
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146407041}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 093175eab4aac674790e1c81d6d752f3, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2147304830
 GameObject:
   m_ObjectHideFlags: 0
