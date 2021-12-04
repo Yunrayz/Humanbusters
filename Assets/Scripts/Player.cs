@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float moveSpeed;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     public Vector2 moveDirection;
 
     public int hp;
@@ -15,25 +15,13 @@ public class Player : MonoBehaviour
     private void Start()
     {
         timeIsPassed = true;
-        rb = GetComponent<Rigidbody2D>();
-        moveSpeed = 5;
-        hp = 100;
-
     }
 
     void Update()
     {
         
         ProcessInputs();
-        if (hp <= 0)
-        {
-            canMove = false;
-            StopMovement();
-        }
-        else if (canMove)
-            Move();
-        else
-            StopMovement();
+        Move();
         
     }
     void ProcessInputs(){
@@ -56,7 +44,8 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Exorcist" && timeIsPassed)
         {
-            hp -= 5;
+            Debug.Log("CollisionDetected");
+            hp -= 100;
             timeIsPassed = false;
             StartCoroutine(Waiting());
         }
@@ -66,7 +55,7 @@ public class Player : MonoBehaviour
 
     IEnumerator Waiting()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2);
         timeIsPassed = true;
     }
 

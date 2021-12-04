@@ -12,11 +12,16 @@ public class Nun2 : MonoBehaviour
     private int stop;
 
 
+    //get from interaction scripts
+    public bool actionTriggered = false;
+    public float xPosAction = 5;
+    public float yPosAction = 5;
+
+
     private Rigidbody2D nunRb;
     private Vector2 direction = Vector2.left;
     private NPCFunctions functionsScript;       //script with functions common to all NPCs
     private AudioSource audioSource;
-    private Player player;
 
     void Start()
     {
@@ -27,25 +32,26 @@ public class Nun2 : MonoBehaviour
         running = false;
         speed = 1;
         stop = 0;
-        player = GameObject.Find("Player").GetComponent<Player>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (actionTriggered)
+        {
+            if (functionsScript.checkDistance(xPosAction, yPosAction, radius))
+            {
+                fear += 100;
+                audioSource.Play();
+            }
+        }
+
         if (fear > fearLimit)
         {
             if (!running)
                 audioSource.Play();
             RunAway();
-        }
-        else if (functionsScript.actionTriggered)
-        {
-            fear += functionsScript.getScared(transform.position, functionsScript.posAction, radius);
-        }
-        else if (player.hp <= 0)
-        {
-            functionsScript.stopMovement(nunRb);
         }
         else
         {
