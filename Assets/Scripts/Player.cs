@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         moveSpeed = 5;
         hp = 100;
+
     }
 
     void Update()
@@ -57,7 +58,6 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Exorcist" && timeIsPassed)
         {
-            Debug.Log("CollisionDetected");
             hp -= 5;
             timeIsPassed = false;
             StartCoroutine(Waiting());
