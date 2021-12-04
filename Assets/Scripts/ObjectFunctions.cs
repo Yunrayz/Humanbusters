@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectFunctions : MonoBehaviour
-{    private bool oneThrow = false;
+{    
+    private bool oneThrow = false;
     private string assetBroken;
     private string action;
     private Rigidbody2D objectAction;
@@ -25,7 +26,7 @@ public class ObjectFunctions : MonoBehaviour
         }
         else
         {
-            NPCFunctions npcFunctions = GameObject.Find("GameManager").GetComponent<NPCFunctions>();
+            NPCFunctions npcFunctions = GameObject.Find("Game Manager").GetComponent<NPCFunctions>();
             npcFunctions.actionTriggered = true;
             npcFunctions.posAction = collider.transform.position;
             Player player = GameObject.Find("Player").GetComponent<Player>();
@@ -54,7 +55,14 @@ public class ObjectFunctions : MonoBehaviour
         turnOn = !turnOn;
         audioComponent = collider.GetComponent<AudioSource>();
         collider.SendMessage("hideMenuHelper");
-        if(turnOn == true){
+
+        NPCFunctions npcFunctions = GameObject.Find("Game Manager").GetComponent<NPCFunctions>();
+        npcFunctions.actionTriggered = true;
+        npcFunctions.posAction = collider.transform.position;
+        Player player = GameObject.Find("Player").GetComponent<Player>();
+        player.hp -= 10;
+
+        if (turnOn == true){
         if(collider.transform.childCount>1){
             items = collider.GetComponentsInChildren<SpriteRenderer>();
             foreach (SpriteRenderer spriteComponent in items){
@@ -84,6 +92,13 @@ public class ObjectFunctions : MonoBehaviour
     }
 
      public void makeSoundObject(Collider2D collider){
+
+        NPCFunctions npcFunctions = GameObject.Find("Game Manager").GetComponent<NPCFunctions>();
+        npcFunctions.actionTriggered = true;
+        npcFunctions.posAction = collider.transform.position;
+        Player player = GameObject.Find("Player").GetComponent<Player>();
+        player.hp -= 10;
+
         turnOn = !turnOn;
         audioComponent = collider.GetComponent<AudioSource>();
         collider.SendMessage("hideMenuHelper");

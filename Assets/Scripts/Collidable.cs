@@ -28,7 +28,7 @@ public class Collidable : MonoBehaviour
         simon = GameObject.FindWithTag("Player").GetComponent<Player>();
         thisTransform = transform;
 
-        npcFunctions = GameObject.Find("GameManager").GetComponent<NPCFunctions>();
+        npcFunctions = GameObject.Find("Game Manager").GetComponent<NPCFunctions>();
     }
 
  

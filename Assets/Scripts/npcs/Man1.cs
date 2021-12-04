@@ -25,7 +25,7 @@ public class Man1 : MonoBehaviour
     {
         fear = 0;
         neighborRb = GetComponent<Rigidbody2D>();
-        functionsScript = GameObject.Find("GameManager").GetComponent<NPCFunctions>();
+        functionsScript = GameObject.Find("Game Manager").GetComponent<NPCFunctions>();
         audioSource = GetComponent<AudioSource>();
         running = false;
         player = GameObject.Find("Player").GetComponent<Player>();

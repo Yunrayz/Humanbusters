@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour
         {
             canMove = false;
             StopMovement();
+            GameObject.Find("Game Manager").GetComponent<GameManager>().GameOver();
         }
         else if (canMove)
             Move();
@@ -73,7 +75,7 @@ public class Player : MonoBehaviour
 
     IEnumerator Waiting()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         timeIsPassed = true;
     }
 

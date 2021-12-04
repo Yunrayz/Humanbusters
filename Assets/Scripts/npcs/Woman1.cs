@@ -24,7 +24,7 @@ public class Woman1 : MonoBehaviour
     {
         neighborRb = GetComponent<Rigidbody2D>();
         fear = 0;
-        functionsScript = GameObject.Find("GameManager").GetComponent<NPCFunctions>();
+        functionsScript = GameObject.Find("Game Manager").GetComponent<NPCFunctions>();
         audioSource = GetComponent<AudioSource>();
         running = false;
         speed = 1;
