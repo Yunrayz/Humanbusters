@@ -8,7 +8,7 @@ public class Man1 : MonoBehaviour
     public int fear;                //fear the NPC is feeling
     public int fearLimit = 100;     //limit of Fear before he runs away
     public float radius = 2;        //min distance between the NPC and the action for him to be affected
-    private bool running;
+    public bool running;
     private Vector2 obj;
     private int walkingStop;
 

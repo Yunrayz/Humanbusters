@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
 
     public bool canMove = true;
 
+    private Man1 man;
+
 
     private void Start()
     {
@@ -20,6 +22,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         moveSpeed = 5;
         hp = 150;
+        man = GameObject.Find("Man1").GetComponent<Man1>();
 
     }
 
@@ -35,7 +38,9 @@ public class Player : MonoBehaviour
             Move();
         else
             StopMovement();
-        
+        if(!man.running && man.fear >= man.fearLimit){
+            GetComponent<AudioSource>().Play();
+        }
         
     }
     void ProcessInputs(){
