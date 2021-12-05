@@ -26,11 +26,13 @@ public class NPCFunctions : MonoBehaviour
         {
             fear = 15;
             actionTriggered = false;
-            if (distance < 0.8f)
+            if (distance < 1f)
             {
                 player.hp += 20;
                 fear *= 2;
             }
+            else 
+                player.hp += 5;
         }
 
         return fear;
