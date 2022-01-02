@@ -62,28 +62,14 @@ public class Nun1 : MonoBehaviour
         
         if (walkingStop == 0)
         {
-            obj = new Vector2(6.5f, 1f);
+            obj = new Vector2(26, 0.75f);
             transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, obj) < 0.01f)
                 walkingStop = 1;
         }
-        else if (walkingStop == 1)
-        {
-            obj = new Vector2(2.5f, -2.5f);
-            transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
-            if (Vector2.Distance(transform.position, obj) < 0.01f)
-                walkingStop = 2;
-        }
-        else if (walkingStop == 2)
-        {
-            obj = new Vector2(2.5f, 0f);
-            transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
-            if (Vector2.Distance(transform.position, obj) < 0.01f)
-                walkingStop = 3;
-        }
         else
         {
-            obj = new Vector2(-0.4f, 0.2f);
+            obj = new Vector2(18, 0.75f);
             transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, obj) < 0.01f)
                 walkingStop = 0;
@@ -92,15 +78,24 @@ public class Nun1 : MonoBehaviour
 
     private void RunAway()
     {
+        if (!running)
+            obj = new Vector2(23f, 0.75f);
+
         running = true;
         speed = 2.8f;
 
-        obj = new Vector2(5.5f, 1.8f);
         transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
-        if (Vector2.Distance(transform.position, obj) < 0.01f)
+
+        if (Vector2.Distance(transform.position, obj) < 0.01f || transform.position.y < 0.75)
         {
-            Destroy(this.gameObject);
-            Destroy(GameObject.Find("Nun fearbar"));
+            obj = new Vector2(23f, -2.6f);
+            transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
+            if (Vector2.Distance(transform.position, obj) < 0.01f)
+            {
+                Destroy(this.gameObject);
+                //Destroy(GameObject.Find("Nun fearbar"));
+            }
         }
+
     }
 }
