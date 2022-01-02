@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class doorK : MonoBehaviour
+public class doorK2L : MonoBehaviour
 {
     private GameObject player;
     private GameObject mainCamera;
