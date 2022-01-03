@@ -9,6 +9,7 @@ TagManager:
   - Interactive
   - Ignore
   - canvas
+  - NPC
   layers:
   - Default
   - TransparentFX

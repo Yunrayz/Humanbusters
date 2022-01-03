@@ -22,7 +22,6 @@ public class Player : MonoBehaviour
         timeIsPassed = true;
         rb = GetComponent<Rigidbody2D>();
         moveSpeed = 5;
-        hp = 200;
         man = GameObject.Find("Man1").GetComponent<Man1>();
 
     }
