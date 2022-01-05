@@ -30,7 +30,7 @@ public class Cop1 : MonoBehaviour
         squareR = transform.Find("SquareR").gameObject;
         squareL = transform.Find("SquareL").gameObject;
         squareL.SetActive(false);
-        //audioSource = transform.GetComponent<AudioSource>();
+        audioSource = transform.GetComponent<AudioSource>();
         fear = 0;
         functionsScript = GameObject.Find("Game Manager").GetComponent<NPCFunctions>();
         running = false;
@@ -47,8 +47,8 @@ public class Cop1 : MonoBehaviour
 
         if (fear > fearLimit)
         {
-            //if (!running)
-                //audioSource.Play();
+            if (!running)
+                audioSource.Play();
             RunAway();
         }
         else if (player.hp <= 0)

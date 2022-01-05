@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
         if (GameObject.FindGameObjectsWithTag("NPC").Length == 0 && GameObject.FindGameObjectsWithTag("Exorcist").Length == 0 &&
             SceneManager.GetActiveScene().name == "Level 0")
         {
-            Debug.Log("YOU WIN");
+            Debug.Log("You Win");
+            SceneManager.LoadScene("Win");
         }
     }
 
