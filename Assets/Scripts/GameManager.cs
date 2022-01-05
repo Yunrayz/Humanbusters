@@ -20,12 +20,12 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("Level 0");
-
+        /*
         GameObject.Find("Player").GetComponent<Player>().hp = 200;
         GameObject.Find("Man1").GetComponent<Man1>().fearLimit = 100;
         GameObject.Find("Woman1").GetComponent<Woman1>().fearLimit = 100;
         GameObject.Find("Nun1").GetComponent<Nun1>().fearLimit = 50;
-        GameObject.Find("Nun2").GetComponent<Nun2>().fearLimit = 50;
+        GameObject.Find("Nun2").GetComponent<Nun2>().fearLimit = 50;*/
     }
 
     public void GameOver()
