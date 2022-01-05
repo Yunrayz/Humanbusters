@@ -78,13 +78,13 @@ public class ObjectFunctions : MonoBehaviour
                 items = collider.GetComponentsInChildren<SpriteRenderer>();
                 foreach (SpriteRenderer spriteComponent in items)
                 {
-                    spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(spriteComponent.sprite.name + "On") as Sprite;
+                    spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(collider.transform.parent.name + "/" + collider.name + "On") as Sprite;
                 }
             }
             else
             {
                 spriteComponent = collider.GetComponent<SpriteRenderer>();
-                spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(spriteComponent.sprite.name + "On") as Sprite;
+                spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(collider.transform.parent.name + "/" + collider.name + "On") as Sprite;
             }
 
             audioComponent.Play();
@@ -96,13 +96,13 @@ public class ObjectFunctions : MonoBehaviour
                 items = collider.GetComponentsInChildren<SpriteRenderer>();
                 foreach (SpriteRenderer spriteComponent in items)
                 {
-                    spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(spriteComponent.name) as Sprite;
+                    spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(collider.transform.parent.name + "/" + collider.name) as Sprite;
                 }
             }
             else
             {
                 spriteComponent = collider.GetComponent<SpriteRenderer>();
-                spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(spriteComponent.name) as Sprite;
+                spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(collider.transform.parent.name + "/" + collider.name) as Sprite;
             }
             audioComponent.Stop();
         }
