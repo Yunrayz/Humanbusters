@@ -20,11 +20,11 @@ public class KidA1 : MonoBehaviour
     private AudioSource audioSource;
     private Player player;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         fear = 0;
-        //kidARb = GetComponent<Rigidbody2D>();
+        kidARb = GetComponent<Rigidbody2D>();
         functionsScript = GameObject.Find("Game Manager").GetComponent<NPCFunctions>();
         audioSource = GetComponent<AudioSource>();
         running = false;
@@ -39,8 +39,8 @@ public class KidA1 : MonoBehaviour
 
         if (fear >= fearLimit)
         {
-            //if (!running)
-                //audioSource.Play();
+            if (!running)
+                audioSource.Play();
             RunAway();
         }
         else if (player.hp <= 0)
