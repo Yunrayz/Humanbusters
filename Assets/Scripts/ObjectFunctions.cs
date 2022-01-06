@@ -22,7 +22,7 @@ public class ObjectFunctions : MonoBehaviour
     public void throwObject(Collider2D collider)
     {
         action = "throw";
-        if (collider.name != "books" && collider.name != "chair")
+        if (collider.name != "books" && collider.name != "chair" && collider.name != "lamp")
         {
             collider.SendMessage("makeAction");
         }
@@ -138,7 +138,7 @@ public class ObjectFunctions : MonoBehaviour
             yield return new WaitForSeconds(2);
         else
             yield return new WaitForSeconds(1);
-        if (assetBroken == objectAction.name + "Broken" && itemObject.isBreakable)
+        if (itemObject.isBreakable)
         {
             objectAction.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load<Sprite>(itemObject.transform.parent.name + "/" + assetBroken) as Sprite;
         }
