@@ -8,7 +8,7 @@ public class NPCFunctions : MonoBehaviour
 
     public bool actionTriggered;
     public Vector2 posAction;
-    int fear;
+    private int fear;
     private Player player;
 
     private void Start()
@@ -28,7 +28,7 @@ public class NPCFunctions : MonoBehaviour
             actionTriggered = false;
             if (distance < 1f)
             {
-                player.hp += 20;
+                player.hp += 15;
                 fear *= 2;
             }
             else 

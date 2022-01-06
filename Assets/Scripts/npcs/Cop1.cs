@@ -32,6 +32,7 @@ public class Cop1 : MonoBehaviour
         squareL.SetActive(false);
         audioSource = transform.GetComponent<AudioSource>();
         fear = 0;
+        fearLimit = 70;
         functionsScript = GameObject.Find("Game Manager").GetComponent<NPCFunctions>();
         running = false;
         speed = 1;
