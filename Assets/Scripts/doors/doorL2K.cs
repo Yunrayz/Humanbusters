@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class doorL2K : MonoBehaviour
+public class doorL2K : doorCanvas
 {
     private GameObject player;
     private GameObject mainCamera;
     private bool timeIsPassed;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         player = GameObject.Find("Player");
         mainCamera = GameObject.Find("Main Camera");
     }
@@ -19,7 +20,7 @@ public class doorL2K : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             changeRoom();
-            
+
         }
     }
 

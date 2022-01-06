@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class doorBA2B : MonoBehaviour
+public class doorBA2B : doorCanvas
 {
     private GameObject player;
     private GameObject mainCamera;
     private bool timeIsPassed;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         player = GameObject.Find("Player");
         mainCamera = GameObject.Find("Main Camera");
     }
