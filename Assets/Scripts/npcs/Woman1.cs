@@ -6,7 +6,7 @@ public class Woman1 : MonoBehaviour
 {
     public float speed;
     public int fear;                //fear the NPC is feeling
-    public int fearLimit = 100;     //limit of Fear before he runs away
+    public int fearLimit = 50;      //limit of Fear before he runs away
     public float radius = 2;        //min distance between the NPC and the action for him to be affected
     private bool running;
     private Vector2 obj;
@@ -24,6 +24,7 @@ public class Woman1 : MonoBehaviour
     {
         neighborRb = GetComponent<Rigidbody2D>();
         fear = 0;
+        fearLimit = 50;
         functionsScript = GameObject.Find("Game Manager").GetComponent<NPCFunctions>();
         audioSource = GetComponent<AudioSource>();
         running = false;
@@ -63,7 +64,7 @@ public class Woman1 : MonoBehaviour
 
         if (walkingStop == 0)
         {
-            obj = new Vector2(0.5f, -12.5f);
+            obj = new Vector2(0.5f, -11.75f);
             transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, obj) < 0.01f)
                 walkingStop = 1;
@@ -84,7 +85,7 @@ public class Woman1 : MonoBehaviour
         }
         else
         {
-            obj = new Vector2(4.5f, -12.5f);
+            obj = new Vector2(4.5f, -11.75f);
             transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, obj) < 0.01f)
                 walkingStop = 0;

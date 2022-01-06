@@ -24,6 +24,7 @@ public class KidA1 : MonoBehaviour
     void Start()
     {
         fear = 0;
+        fearLimit = 30;
         kidARb = GetComponent<Rigidbody2D>();
         functionsScript = GameObject.Find("Game Manager").GetComponent<NPCFunctions>();
         audioSource = GetComponent<AudioSource>();

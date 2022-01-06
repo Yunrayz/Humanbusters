@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        hp = 100;
         timeIsPassed = true;
         rb = GetComponent<Rigidbody2D>();
         moveSpeed = 5;
