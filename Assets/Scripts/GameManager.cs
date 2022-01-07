@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         if (startingLevel)
         {
             Simon.transform.position = Vector2.MoveTowards(Simon.transform.position, obj, 1.5f * Time.deltaTime);
-            if (Vector2.Distance(Simon.transform.position, new Vector2(-4.7f, 0)) < 0.01f)
+            if (Vector2.Distance(Simon.transform.position, obj) < 0.01f)
             {
                 startingLevel = false;
                 SceneManager.LoadScene(nameLevel);
@@ -37,38 +37,27 @@ public class GameManager : MonoBehaviour
     public void StartLevel1()
     {
         GameObject.Find("Story 6").gameObject.SetActive(false);
-        obj = new Vector2(-4.7f, 0);
-        nameLevel = "Level 0";
+        obj = new Vector2(-5.4f, 0);
+        nameLevel = "Level 1";
         startingLevel = true;
     }
 
     public void StartLevel2()
     {
         GameObject.Find("Story 6").gameObject.SetActive(false);
-        new Vector2(-4.7f, 0);
-        nameLevel = "Level 0";
+        obj = new Vector2(-3.1f, -1.2f);
+        nameLevel = "Level 1";
         startingLevel = true;
     }
 
     public void StartLevel3()
     {
         GameObject.Find("Story 6").gameObject.SetActive(false);
-        new Vector2(-4.7f, 0);
-        nameLevel = "Level 0";
+        obj = new Vector2(-1.5f, -2);
+        nameLevel = "Level 1";
         startingLevel = true;
     }
 
-    public void StartGame()
-    {
-
-        SceneManager.LoadScene("Level 0");
-        /*
-        GameObject.Find("Player").GetComponent<Player>().hp = 200;
-        GameObject.Find("Man1").GetComponent<Man1>().fearLimit = 100;
-        GameObject.Find("Woman1").GetComponent<Woman1>().fearLimit = 100;
-        GameObject.Find("Nun1").GetComponent<Nun1>().fearLimit = 50;
-        GameObject.Find("Nun2").GetComponent<Nun2>().fearLimit = 50;*/
-    }
 
     public void GameOver()
     {
