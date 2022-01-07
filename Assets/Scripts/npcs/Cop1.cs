@@ -71,7 +71,7 @@ public class Cop1 : MonoBehaviour
 
         if (walkingStop == 0)
         {
-            obj = new Vector2(33.5f, 0.5f);
+            obj = new Vector2(33.5f, 0.2f);
             transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, obj) < 0.01f)
             {
@@ -84,7 +84,7 @@ public class Cop1 : MonoBehaviour
         }
         else
         {
-            obj = new Vector2(25.5f, 0.5f);
+            obj = new Vector2(25.5f, 0.2f);
             transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, obj) < 0.01f)
             {
@@ -101,7 +101,7 @@ public class Cop1 : MonoBehaviour
     private void RunAway()
     {
         if (!running)
-            obj = new Vector2(30f, 0.5f);
+            obj = new Vector2(30f, 0.1f);
 
         running = true;
         speed = 2.5f;
