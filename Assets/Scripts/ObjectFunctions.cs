@@ -99,7 +99,7 @@ public class ObjectFunctions : MonoBehaviour
                 items = collider.GetComponentsInChildren<SpriteRenderer>();
                 foreach (SpriteRenderer spriteComponent in items)
                 {
-                    spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(collider.transform.parent.name + "/" + collider.name) as Sprite;
+                    spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(collider.transform.parent.name + "/" + spriteComponent.sprite.name.Substring(0, spriteComponent.sprite.name.Length - 2)) as Sprite;
                 }
             }
             else
@@ -141,7 +141,7 @@ public class ObjectFunctions : MonoBehaviour
             yield return new WaitForSeconds(2);
         else
             yield return new WaitForSeconds(1);
-        if (itemObject.isBreakable && assetBroken == spriteComponent.sprite.name + "Broken")
+        if (itemObject.isBreakable && !spriteComponent.sprite.name.Contains("Broken"))
         {
             objectAction.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load<Sprite>(itemObject.transform.parent.name + "/" + assetBroken) as Sprite;
         }
