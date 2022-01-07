@@ -22,7 +22,7 @@ public class ObjectFunctions : MonoBehaviour
     public void throwObject(Collider2D collider)
     {
         action = "throw";
-        if (collider.name != "books" && collider.name != "chair" && collider.name != "lamp")
+        if (collider.name != "books" && collider.name != "chair" && collider.name != "lamp" && collider.name != "bucket")
         {
             collider.SendMessage("makeAction");
         }
@@ -97,13 +97,13 @@ public class ObjectFunctions : MonoBehaviour
                 items = collider.GetComponentsInChildren<SpriteRenderer>();
                 foreach (SpriteRenderer spriteComponent in items)
                 {
-                    spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(collider.transform.parent.name + "/" + spriteComponent.sprite.name) as Sprite;
+                    spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(collider.transform.parent.name + "/" + collider.name) as Sprite;
                 }
             }
             else
             {
                 spriteComponent = collider.GetComponent<SpriteRenderer>();
-                spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(collider.transform.parent.name + "/" + spriteComponent.sprite.name) as Sprite;
+                spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(collider.transform.parent.name + "/" + collider.name) as Sprite;
             }
             audioComponent.Stop();
         }
@@ -139,7 +139,7 @@ public class ObjectFunctions : MonoBehaviour
             yield return new WaitForSeconds(2);
         else
             yield return new WaitForSeconds(1);
-        if (itemObject.isBreakable)
+        if (itemObject.isBreakable && assetBroken == itemObject.name + "Broken")
         {
             objectAction.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load<Sprite>(itemObject.transform.parent.name + "/" + assetBroken) as Sprite;
         }
