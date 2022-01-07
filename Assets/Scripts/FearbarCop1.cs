@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FearbarNun1 : MonoBehaviour
+public class FearbarCop1 : MonoBehaviour
 {
     public Slider slider;
     public Gradient gradient;
@@ -20,12 +20,12 @@ public class FearbarNun1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var fear = NPC.GetComponent<Nun1>().fear;
+        var fear = NPC.GetComponent<Cop1>().fear;
         circle1Sprite = circle1.GetComponent<SpriteRenderer>();
         circle2Sprite = circle2.GetComponent<SpriteRenderer>();
 
         slider.minValue = 0;
-        slider.maxValue = NPC.GetComponent<Nun1>().fearLimit;
+        slider.maxValue = NPC.GetComponent<Cop1>().fearLimit;
         slider.value = fear;
 
         fill.color = gradient.Evaluate(1f);
@@ -42,7 +42,7 @@ public class FearbarNun1 : MonoBehaviour
         }
         else
         {
-            var fear = NPC.GetComponent<Nun1>().fear;
+            var fear = NPC.GetComponent<Cop1>().fear;
 
             if (fear > 0)
             {
@@ -62,8 +62,7 @@ public class FearbarNun1 : MonoBehaviour
                 circle2Sprite.color = Color.clear;
             }
 
-            Vector3 monsterPosition = new Vector3(NPC.transform.position.x,
-                NPC.transform.position.y + healthBarCorrection, NPC.transform.position.z);
+            Vector3 monsterPosition = new Vector3((float) (NPC.transform.position.x -7.18), NPC.transform.position.y + healthBarCorrection, NPC.transform.position.z);
             GetComponent<Transform>().position = monsterPosition;
         }
     }
