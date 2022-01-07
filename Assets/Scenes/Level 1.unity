@@ -2512,7 +2512,7 @@ GameObject:
   - component: {fileID: 150120763}
   - component: {fileID: 150120764}
   m_Layer: 0
-  m_Name: New Piskel-8.png
+  m_Name: bath4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16352,7 +16352,7 @@ GameObject:
   - component: {fileID: 739097988}
   - component: {fileID: 739097989}
   m_Layer: 0
-  m_Name: New Piskel-6.png (1)
+  m_Name: bath3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19321,7 +19321,7 @@ PrefabInstance:
       objectReference: {fileID: 276400043}
     - target: {fileID: 9173453749043482243, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: makeSoundObject
+      value: turnOnObject
       objectReference: {fileID: 0}
     - target: {fileID: 9173453749043482243, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -21781,7 +21781,7 @@ PrefabInstance:
       objectReference: {fileID: 276400043}
     - target: {fileID: 9173453749043482243, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: makeSoundObject
+      value: turnOnObject
       objectReference: {fileID: 0}
     - target: {fileID: 9173453749043482243, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -24324,7 +24324,7 @@ GameObject:
   - component: {fileID: 1401276804}
   - component: {fileID: 1401276803}
   m_Layer: 0
-  m_Name: bathtub
+  m_Name: bath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31823,7 +31823,7 @@ GameObject:
   - component: {fileID: 1767636960}
   - component: {fileID: 1767636961}
   m_Layer: 0
-  m_Name: bath 2
+  m_Name: bath2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37490,7 +37490,7 @@ GameObject:
   - component: {fileID: 2020488912}
   - component: {fileID: 2020488913}
   m_Layer: 0
-  m_Name: bath 1
+  m_Name: bath1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
