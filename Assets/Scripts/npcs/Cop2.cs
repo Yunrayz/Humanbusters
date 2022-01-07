@@ -2,111 +2,119 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Nun1 : MonoBehaviour
+public class Cop2 : MonoBehaviour
 {
-    public float speed = 1.5f;
+    public float speed;
     public int fear;                //fear the NPC is feeling
     public int fearLimit = 100;     //limit of Fear before he runs away
     public float radius = 2;        //min distance between the NPC and the action for him to be affected
     private bool running;
-    private Player player;
     private int walkingStop;
     private Vector2 obj;
 
 
-    private Rigidbody2D nunRb;
+    private Rigidbody2D copRb;
     private Vector2 direction = Vector2.left;
     private NPCFunctions functionsScript;       //script with functions common to all NPCs
     private AudioSource audioSource;
+    private Player player;
+    private Animator animator;
+    private GameObject squareR;
+    private GameObject squareL;
+
 
     void Start()
     {
-        fear = 0;
-        nunRb = GetComponent<Rigidbody2D>();
+        copRb = GetComponent<Rigidbody2D>();
+        animator = transform.Find("Cop1").GetComponent<Animator>();
+        squareR = transform.Find("SquareR").gameObject;
+        squareL = transform.Find("SquareL").gameObject;
+        squareR.SetActive(false);
         audioSource = transform.GetComponent<AudioSource>();
+        fear = 0;
+        fearLimit = 70;
         functionsScript = GameObject.Find("Game Manager").GetComponent<NPCFunctions>();
         running = false;
+        speed = 1;
+        walkingStop = 0;
         player = GameObject.Find("Player").GetComponent<Player>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-
         if (fear >= fearLimit * 0.75)
             speed = 2;
 
-        if (fear >= fearLimit)
+        if (fear > fearLimit)
         {
             if (!running)
                 audioSource.Play();
             RunAway();
         }
-        else if (functionsScript.actionTriggered)
-        {
-            fear += functionsScript.getScared(transform.position, functionsScript.posAction);
-        }
         else if (player.hp <= 0)
         {
-            functionsScript.stopMovement(nunRb);
+            functionsScript.stopMovement(copRb);
         }
         else
         {
             Move();
+            if (functionsScript.actionTriggered)
+            {
+                fear += functionsScript.getScared(transform.Find("Cop1").transform.position, functionsScript.posAction);
+            }
         }
-
     }
+
     private void Move()
     {
+
         if (walkingStop == 0)
         {
-            obj = new Vector2(26.5f, -15f);
+            obj = new Vector2(26f, -2.2f);
             transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, obj) < 0.01f)
+            {
                 walkingStop = 1;
-        }
-        else if (walkingStop == 1)
-        {
-            obj = new Vector2(26.5f, -12f);
-            transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
-            if (Vector2.Distance(transform.position, obj) < 0.01f)
-                walkingStop = 2;
-        }
-        else if (walkingStop == 2)
-        {
-            obj = new Vector2(26.5f, -15f);
-            transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
-            if (Vector2.Distance(transform.position, obj) < 0.01f)
-                walkingStop = 3;
+                animator.SetBool("Left", false);
+                squareR.SetActive(true);
+                squareL.SetActive(false);
+
+            }
         }
         else
         {
-            obj = new Vector2(18, -15f);
+            obj = new Vector2(34f, -2.2f);
             transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, obj) < 0.01f)
+            {
                 walkingStop = 0;
+                animator.SetBool("Left", true);
+                squareL.SetActive(true);
+                squareR.SetActive(false);
+
+            }
         }
 
     }
-
 
     private void RunAway()
     {
         if (!running)
-            obj = new Vector2(26.4f, -15f);
+            obj = new Vector2(30f, -2.2f);
 
         running = true;
         speed = 2.5f;
+
         transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
 
-        if (Vector2.Distance(transform.position, obj) < 0.01f)
+        if (Vector2.Distance(transform.position, obj) < 0.01f || transform.position.y < 0.5)
         {
-            obj = new Vector2(26.4f, -17f);
+            obj = new Vector2(30f, -2.7f);
             transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, obj) < 0.01f)
             {
                 Destroy(this.gameObject);
-                Destroy(GameObject.Find("Man fearbar"));
             }
         }
 

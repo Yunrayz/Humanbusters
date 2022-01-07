@@ -10,6 +10,7 @@ TagManager:
   - Ignore
   - canvas
   - NPC
+  - Cop
   layers:
   - Default
   - TransparentFX

@@ -19,8 +19,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (GameObject.FindGameObjectsWithTag("NPC").Length == 0 && GameObject.FindGameObjectsWithTag("Exorcist").Length == 0 &&
-            SceneManager.GetActiveScene().name == "Level 1" || SceneManager.GetActiveScene().name == "Level 2" ||
-            SceneManager.GetActiveScene().name == "Level 3")
+            (SceneManager.GetActiveScene().name == "Level 1" || SceneManager.GetActiveScene().name == "Level 2" ||
+            SceneManager.GetActiveScene().name == "Level 3"))
         {
             SceneManager.LoadScene("Win");
         }
