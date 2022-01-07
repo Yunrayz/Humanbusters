@@ -129,6 +129,18 @@ public class ObjectFunctions : MonoBehaviour
             audioComponent.Stop();
     }
 
+    public void makeSoundOnce(Collider2D collider)
+    {
+        NPCFunctions npcFunctions = GameObject.Find("Game Manager").GetComponent<NPCFunctions>();
+        npcFunctions.actionTriggered = true;
+        npcFunctions.posAction = collider.transform.position;
+        Player player = GameObject.Find("Player").GetComponent<Player>();
+        player.hp -= 10;
+        collider.SendMessage("hideMenuHelper");
+        audioComponent = collider.GetComponent<AudioSource>();
+        audioComponent.Play();
+    }
+
     IEnumerator throwAndChangeSprite()
     {
         if (action == "throw")
