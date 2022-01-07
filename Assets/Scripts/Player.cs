@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     public int hp;
     private bool timeIsPassed;
+    private bool timeIsPassedCop;
 
     public bool canMove = true;
 
@@ -21,6 +22,7 @@ public class Player : MonoBehaviour
     {
         hp = 100;
         timeIsPassed = true;
+        timeIsPassedCop = true;
         rb = GetComponent<Rigidbody2D>();
         moveSpeed = 5;
         man = GameObject.Find("Man1").GetComponent<Man1>();
@@ -70,6 +72,13 @@ public class Player : MonoBehaviour
             hp -= 5;
             timeIsPassed = false;
             StartCoroutine(Waiting());
+        } 
+        if (collision.gameObject.tag == "Cop" && timeIsPassedCop)
+        {
+            hp -= 10;
+            timeIsPassedCop = false;
+            StartCoroutine(WaitingCop());
+
         }
         
     }
@@ -80,5 +89,9 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(1f);
         timeIsPassed = true;
     }
-
+    IEnumerator WaitingCop()
+    {
+        yield return new WaitForSeconds(1f);
+        timeIsPassedCop = true;
+    }
 }

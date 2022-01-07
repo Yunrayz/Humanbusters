@@ -19,8 +19,8 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (GameObject.FindGameObjectsWithTag("NPC").Length == 0 && GameObject.FindGameObjectsWithTag("Exorcist").Length == 0 &&
-            SceneManager.GetActiveScene().name == "Level 1" || SceneManager.GetActiveScene().name == "Level 2" ||
-            SceneManager.GetActiveScene().name == "Level 3")
+            (SceneManager.GetActiveScene().name == "Level 1" || SceneManager.GetActiveScene().name == "Level 2" ||
+            SceneManager.GetActiveScene().name == "Level 3"))
         {
             SceneManager.LoadScene("Win");
         }
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     {
         GameObject.Find("Story 6").gameObject.SetActive(false);
         obj = new Vector2(-3.1f, -1.2f);
-        nameLevel = "Level 1";
+        nameLevel = "Level 2";
         startingLevel = true;
     }
 

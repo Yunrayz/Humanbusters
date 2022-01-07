@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 6640672}
   m_Layer: 0
   m_Name: SquareL
-  m_TagString: Exorcist
+  m_TagString: Cop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16964,19 +16964,32 @@ Transform:
   m_Father: {fileID: 525446695}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &709520809
-BoxCollider:
+--- !u!61 &709520809
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 709520807}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.40665054, y: 0.20618844}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.829422, y: 1.3317672, z: 1}
-  m_Center: {x: 0.414711, y: 0.1658836, z: 0}
+  m_Size: {x: 1.8133011, y: 1.4123769}
+  m_EdgeRadius: 0
 --- !u!1 &724496821
 GameObject:
   m_ObjectHideFlags: 0
@@ -19167,7 +19180,7 @@ GameObject:
   - component: {fileID: 966015770}
   m_Layer: 0
   m_Name: SquareR
-  m_TagString: Exorcist
+  m_TagString: Cop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38451,19 +38464,32 @@ Transform:
   m_Father: {fileID: 525446695}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2005330600
-BoxCollider:
+--- !u!61 &2005330600
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2005330598}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.13745856}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9792671, y: 0.5438186, z: 1}
-  m_Center: {x: -0.01036644, y: 0.12441307, z: 0}
+  m_Size: {x: 1, y: 0.61053324}
+  m_EdgeRadius: 0
 --- !u!224 &2010850353 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7810925492150652114, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
