@@ -44,6 +44,7 @@ public class ObjectFunctions : MonoBehaviour
         assetBroken = collider.GetComponent<SpriteRenderer>().sprite.name + "Broken";
         objectAction = collider.attachedRigidbody;
         oneThrow = true;
+        spriteComponent = collider.GetComponent<SpriteRenderer>();
         itemObject = collider.GetComponent<Item>();
         audioComponent = objectAction.GetComponent<AudioSource>();
     }
@@ -54,6 +55,7 @@ public class ObjectFunctions : MonoBehaviour
         collider.SendMessage("makeAction");
         collider.SendMessage("hideMenuHelper");
         assetBroken = collider.GetComponent<SpriteRenderer>().sprite.name + "Broken";
+        spriteComponent = collider.GetComponent<SpriteRenderer>();
         objectAction = collider.attachedRigidbody;
         itemObject = collider.GetComponent<Item>();
         audioComponent = objectAction.GetComponent<AudioSource>();
@@ -139,7 +141,7 @@ public class ObjectFunctions : MonoBehaviour
             yield return new WaitForSeconds(2);
         else
             yield return new WaitForSeconds(1);
-        if (itemObject.isBreakable && assetBroken == itemObject.name + "Broken")
+        if (itemObject.isBreakable && assetBroken == spriteComponent.sprite.name + "Broken")
         {
             objectAction.GetComponent<SpriteRenderer>().sprite = (Sprite)Resources.Load<Sprite>(itemObject.transform.parent.name + "/" + assetBroken) as Sprite;
         }
