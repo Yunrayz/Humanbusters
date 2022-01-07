@@ -13,12 +13,13 @@ public class NPCFunctions : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().name == "Level 0")
+        if (SceneManager.GetActiveScene().name == "Level 1" || SceneManager.GetActiveScene().name == "Level 2" ||
+            SceneManager.GetActiveScene().name == "Level 3")
             player = GameObject.Find("Player").GetComponent<Player>();
     }
 
 
-    public int getScared (Vector2 posNPC, Vector2 posAction, float radius)
+    public int getScared (Vector2 posNPC, Vector2 posAction)
     {
         fear = 0;
         float distance = Vector2.Distance(posNPC, posAction);

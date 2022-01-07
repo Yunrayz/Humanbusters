@@ -27,7 +27,7 @@ public class doorBA2B : doorCanvas
     {
         if (Vector2.Distance(player.transform.position, new Vector2(40.2f, -1.5f)) < 0.5)
         {
-            mainCamera.transform.position = new Vector3(23.19f, -12.7f, -10);
+            mainCamera.transform.position = new Vector3(23.3f, -12.7f, -10);
             player.transform.position = new Vector3(28f, -14f, 0);
             player.GetComponent<Rigidbody2D>().AddForce(30f * Vector2.up);
         }

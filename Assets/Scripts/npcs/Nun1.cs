@@ -44,7 +44,7 @@ public class Nun1 : MonoBehaviour
         }
         else if (functionsScript.actionTriggered)
         {
-            fear += functionsScript.getScared(transform.position, functionsScript.posAction, radius);
+            fear += functionsScript.getScared(transform.position, functionsScript.posAction);
         }
         else if (player.hp <= 0)
         {
