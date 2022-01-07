@@ -53,7 +53,7 @@ public class Nun2 : MonoBehaviour
             Move(); 
             if (functionsScript.actionTriggered)
             {
-                fear += functionsScript.getScared(transform.position, functionsScript.posAction, radius);
+                fear += functionsScript.getScared(transform.position, functionsScript.posAction);
             }
         }
 

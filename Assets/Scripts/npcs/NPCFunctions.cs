@@ -19,7 +19,7 @@ public class NPCFunctions : MonoBehaviour
     }
 
 
-    public int getScared (Vector2 posNPC, Vector2 posAction, float radius)
+    public int getScared (Vector2 posNPC, Vector2 posAction)
     {
         fear = 0;
         float distance = Vector2.Distance(posNPC, posAction);

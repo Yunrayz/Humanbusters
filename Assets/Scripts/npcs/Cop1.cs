@@ -61,7 +61,7 @@ public class Cop1 : MonoBehaviour
             Move();
             if (functionsScript.actionTriggered)
             {
-                fear += functionsScript.getScared(transform.position, functionsScript.posAction, radius);
+                fear += functionsScript.getScared(transform.Find("Cop1").transform.position, functionsScript.posAction);
             }
         }
     }
@@ -71,7 +71,7 @@ public class Cop1 : MonoBehaviour
 
         if (walkingStop == 0)
         {
-            obj = new Vector2(33.5f, 0.2f);
+            obj = new Vector2(33.5f, 0.1f);
             transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, obj) < 0.01f)
             {
@@ -84,7 +84,7 @@ public class Cop1 : MonoBehaviour
         }
         else
         {
-            obj = new Vector2(25.5f, 0.2f);
+            obj = new Vector2(26f, 0.1f);
             transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, obj) < 0.01f)
             {
