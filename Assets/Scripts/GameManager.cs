@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("Win");
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) &&
+        if (Input.GetKeyDown(KeyCode.P) &&
             (SceneManager.GetActiveScene().name == "Level 1" || SceneManager.GetActiveScene().name == "Level 2" ||
             SceneManager.GetActiveScene().name == "Level 3"))
         {
