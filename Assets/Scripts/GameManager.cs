@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
     public void StartLevel3()
     {
         obj = new Vector2(-1.5f, -2);
-        nameLevel = "Level 1";
+        nameLevel = "Level 3";
         startingLevel = true;
     }
 
