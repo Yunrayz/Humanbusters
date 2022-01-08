@@ -2,44 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KidA2 : MonoBehaviour
+public class Cat2 : MonoBehaviour
 {
-    public float speed = 1.5f;
+    public float speed;
     public int fear;                //fear the NPC is feeling
-    public int fearLimit = 100;     //limit of Fear before he runs away
+    public int fearLimit = 50;      //limit of Fear before he runs away
     public float radius = 2;        //min distance between the NPC and the action for him to be affected
-    public bool running;
+    private bool running;
     private Vector2 obj;
     private int walkingStop;
+    int runningStop;
 
-    //get from interaction scripts
-
-    private Rigidbody2D kidARb;
-    private Vector2 direction = Vector2.down;
+    private Rigidbody2D neighborRb;
+    private Vector2 direction = Vector2.left;
     private NPCFunctions functionsScript;       //script with functions common to all NPCs
     private AudioSource audioSource;
     private Player player;
     private GameManager gameManager;
 
-
+    // Start is called before the first frame update
     void Start()
     {
+        neighborRb = GetComponent<Rigidbody2D>();
         fear = 0;
-        fearLimit = 30;
-        speed = 1.5f;
-        kidARb = GetComponent<Rigidbody2D>();
+        fearLimit = 50;
         functionsScript = GameObject.Find("Game Manager").GetComponent<NPCFunctions>();
         audioSource = GetComponent<AudioSource>();
         running = false;
+        speed = 3f;
         player = GameObject.Find("Player").GetComponent<Player>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
-
+    // Update is called once per frame
     void Update()
     {
+
         if (fear >= fearLimit * 0.75)
-            speed = 2;
+            speed = 5;
 
         if (fear >= fearLimit)
         {
@@ -49,7 +49,7 @@ public class KidA2 : MonoBehaviour
         }
         else if (player.hp <= 0)
         {
-            functionsScript.stopMovement(kidARb);
+            functionsScript.stopMovement(neighborRb);
         }
         else if (!gameManager.pause)
         {
@@ -59,6 +59,7 @@ public class KidA2 : MonoBehaviour
                 fear += functionsScript.getScared(transform.position, functionsScript.posAction);
             }
         }
+
     }
 
     private void Move()
