@@ -14,13 +14,17 @@ public class doorCanvas : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        helperText.text = "Press SPACE to move to the " + this.name;
-        helperCanvas.gameObject.SetActive(true);
+        if (other.tag != "NPC" && other.tag != "Exorcist")
+        {
+            helperText.text = "Press SPACE to move to the " + this.name;
+            helperCanvas.gameObject.SetActive(true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        helperCanvas.gameObject.SetActive(false);
+        if (other.tag != "NPC" && other.tag != "Exorcist")
+            helperCanvas.gameObject.SetActive(false);
     }
 
 
