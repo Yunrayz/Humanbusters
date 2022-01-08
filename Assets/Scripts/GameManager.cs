@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private Vector2 obj;
     private string nameLevel;
     public GameObject canvas;
+    public GameObject controls;
     public bool pause;
     
 
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
         {
             if (canvas.activeSelf)
             {
+                controls.SetActive(false);
                 canvas.SetActive(false);
                 pause = false;
             }
@@ -47,12 +49,22 @@ public class GameManager : MonoBehaviour
 
         if (startingLevel)
         {
-            Simon.transform.position = Vector2.MoveTowards(Simon.transform.position, obj, 1.5f * Time.deltaTime);
-            if (Vector2.Distance(Simon.transform.position, obj) < 0.01f)
+            if (SceneManager.GetActiveScene().name == "Story")
+            {
+                Simon.transform.position = Vector2.MoveTowards(Simon.transform.position, obj, 1.5f * Time.deltaTime);
+                if (Vector2.Distance(Simon.transform.position, obj) < 0.01f)
+                {
+                    startingLevel = false;
+                    SceneManager.LoadScene(nameLevel);
+                }
+            }
+            else
             {
                 startingLevel = false;
                 SceneManager.LoadScene(nameLevel);
             }
+
+            
         }
     }
 
@@ -63,7 +75,6 @@ public class GameManager : MonoBehaviour
 
     public void StartLevel1()
     {
-        GameObject.Find("Story 6").gameObject.SetActive(false);
         obj = new Vector2(-5.4f, 0);
         nameLevel = "Level 1";
         startingLevel = true;
@@ -71,7 +82,6 @@ public class GameManager : MonoBehaviour
 
     public void StartLevel2()
     {
-        GameObject.Find("Story 6").gameObject.SetActive(false);
         obj = new Vector2(-3.1f, -1.2f);
         nameLevel = "Level 2";
         startingLevel = true;
@@ -79,7 +89,6 @@ public class GameManager : MonoBehaviour
 
     public void StartLevel3()
     {
-        GameObject.Find("Story 6").gameObject.SetActive(false);
         obj = new Vector2(-1.5f, -2);
         nameLevel = "Level 1";
         startingLevel = true;
@@ -95,6 +104,24 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
     }
+
+    public void GoToStreet()
+    {
+        SceneManager.LoadScene("Story");
+    }
+
+
+    public void GoToLevels()
+    {
+        SceneManager.LoadScene("Levels");
+    }
+
+
+    public void GoToCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
 
     public void ExitApp()
     {
