@@ -10287,7 +10287,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 764969845471359779, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_text
-      value: ON/OFF
+      value: FLUSH
       objectReference: {fileID: 0}
     - target: {fileID: 3478826668783339610, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Name
