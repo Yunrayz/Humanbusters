@@ -18,6 +18,7 @@ public class Woman1 : MonoBehaviour
     private NPCFunctions functionsScript;       //script with functions common to all NPCs
     private AudioSource audioSource;
     private Player player;
+    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class Woman1 : MonoBehaviour
         running = false;
         speed = 1;
         player = GameObject.Find("Player").GetComponent<Player>();
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -48,7 +50,7 @@ public class Woman1 : MonoBehaviour
         {
             functionsScript.stopMovement(neighborRb);
         }
-        else
+        else if (!gameManager.pause)
         {
             Move();
             if (functionsScript.actionTriggered)
