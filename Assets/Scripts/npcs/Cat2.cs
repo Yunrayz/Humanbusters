@@ -66,14 +66,14 @@ public class Cat2 : MonoBehaviour
     {
         if (walkingStop == 0)
         {
-            obj = new Vector2(20.45f, -11.5f);
+            obj = new Vector2(20.5f, -11f);
             transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, obj) < 0.01f)
                 walkingStop = 1;
         }
         else
         {
-            obj = new Vector2(20.45f, -14.5f);
+            obj = new Vector2(20.5f, -14.5f);
             transform.position = Vector2.MoveTowards(transform.position, obj, speed * Time.deltaTime);
             if (Vector2.Distance(transform.position, obj) < 0.01f)
                 walkingStop = 0;
@@ -85,7 +85,7 @@ public class Cat2 : MonoBehaviour
     private void RunAway()
     {
         if (!running)
-            obj = new Vector2(20.45f, -15f);
+            obj = new Vector2(20.5f, -15f);
 
         running = true;
         speed = 2.5f;
