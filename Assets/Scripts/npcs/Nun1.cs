@@ -18,6 +18,7 @@ public class Nun1 : MonoBehaviour
     private Vector2 direction = Vector2.left;
     private NPCFunctions functionsScript;       //script with functions common to all NPCs
     private AudioSource audioSource;
+    private GameManager gameManager;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class Nun1 : MonoBehaviour
         functionsScript = GameObject.Find("Game Manager").GetComponent<NPCFunctions>();
         running = false;
         player = GameObject.Find("Player").GetComponent<Player>();
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -50,7 +52,7 @@ public class Nun1 : MonoBehaviour
         {
             functionsScript.stopMovement(nunRb);
         }
-        else
+        else if (!gameManager.pause)
         {
             Move();
         }

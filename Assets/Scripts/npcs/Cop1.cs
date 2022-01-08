@@ -21,8 +21,9 @@ public class Cop1 : MonoBehaviour
     private Animator animator;
     private GameObject squareR;
     private GameObject squareL;
+    private GameManager gameManager;
 
-    
+
     void Start()
     {
         copRb = GetComponent<Rigidbody2D>();
@@ -38,6 +39,7 @@ public class Cop1 : MonoBehaviour
         speed = 1;
         walkingStop = 0;
         player = GameObject.Find("Player").GetComponent<Player>();
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     
@@ -56,7 +58,7 @@ public class Cop1 : MonoBehaviour
         {
             functionsScript.stopMovement(copRb);
         }
-        else
+        else if (!gameManager.pause)
         {
             Move();
             if (functionsScript.actionTriggered)

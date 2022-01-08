@@ -9,11 +9,15 @@ public class GameManager : MonoBehaviour
     public bool startingLevel;
     private Vector2 obj;
     private string nameLevel;
+    public GameObject canvas;
+    public bool pause;
+    
 
     private void Start()
     {
         Simon = GameObject.Find("Ghost");
         startingLevel = false;
+        pause = false;
     }
 
     void Update()
@@ -24,6 +28,23 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("Win");
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape) &&
+            (SceneManager.GetActiveScene().name == "Level 1" || SceneManager.GetActiveScene().name == "Level 2" ||
+            SceneManager.GetActiveScene().name == "Level 3"))
+        {
+            if (canvas.activeSelf)
+            {
+                canvas.SetActive(false);
+                pause = false;
+            }
+            else
+            {
+                canvas.SetActive(true);
+                pause = true;
+            }
+        }
+
         if (startingLevel)
         {
             Simon.transform.position = Vector2.MoveTowards(Simon.transform.position, obj, 1.5f * Time.deltaTime);
@@ -33,6 +54,11 @@ public class GameManager : MonoBehaviour
                 SceneManager.LoadScene(nameLevel);
             }
         }
+    }
+
+    public void Unpause()
+    {
+        pause = false;
     }
 
     public void StartLevel1()

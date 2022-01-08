@@ -19,6 +19,7 @@ public class KidA1 : MonoBehaviour
     private NPCFunctions functionsScript;       //script with functions common to all NPCs
     private AudioSource audioSource;
     private Player player;
+    private GameManager gameManager;
 
 
     void Start()
@@ -30,6 +31,7 @@ public class KidA1 : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         running = false;
         player = GameObject.Find("Player").GetComponent<Player>();
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
 
@@ -48,7 +50,7 @@ public class KidA1 : MonoBehaviour
         {
             functionsScript.stopMovement(kidARb);
         }
-        else
+        else if (!gameManager.pause)
         {
             Move();
             if (functionsScript.actionTriggered)
