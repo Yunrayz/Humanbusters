@@ -1252,6 +1252,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: throwObject
       objectReference: {fileID: 0}
+    - target: {fileID: 3719600720973567187, guid: 905d0e9b5f1994d98a8bb4548c464478, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7443931664253695160, guid: 905d0e9b5f1994d98a8bb4548c464478, type: 3}
       propertyPath: helperText
       value: 
@@ -2277,6 +2281,10 @@ PrefabInstance:
     - target: {fileID: 3478826668783339610, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Name
       value: Button Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111531261241162197, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7810925492150652114, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Pivot.x
@@ -10293,6 +10301,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6111531261241162197, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6896289541881640813, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Name
       value: Sound Button
@@ -11436,6 +11448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6111531261241162197, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7810925492150652114, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -11753,6 +11769,10 @@ PrefabInstance:
     - target: {fileID: 1856830066854091028, guid: 0e8ee33a840ac41599dec4b69e6029fe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856830066854091029, guid: 0e8ee33a840ac41599dec4b69e6029fe, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1856830068072082988, guid: 0e8ee33a840ac41599dec4b69e6029fe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -12885,6 +12905,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6111531261241162197, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7810925492150652114, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -13527,7 +13551,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1122024387
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 95f6dd959bd667c4580427c8ee2a08a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -16442,6 +16466,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: throwObject
       objectReference: {fileID: 0}
+    - target: {fileID: 3719600720973567187, guid: 905d0e9b5f1994d98a8bb4548c464478, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7443931664253695160, guid: 905d0e9b5f1994d98a8bb4548c464478, type: 3}
       propertyPath: helperText
       value: 
@@ -16821,7 +16849,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1668351455
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 8061adc8877d94e41a6b68482e91558f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -17090,6 +17118,10 @@ PrefabInstance:
     - target: {fileID: 3478826668783339610, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Name
       value: Button Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111531261241162197, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6896289541881640813, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Name
@@ -19610,7 +19642,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1122024387
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 95f6dd959bd667c4580427c8ee2a08a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -21058,6 +21090,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6111531261241162197, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7810925492150652114, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -21166,6 +21202,10 @@ PrefabInstance:
     - target: {fileID: 3478826668783339610, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Name
       value: Button Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111531261241162197, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7810925492150652114, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Pivot.x
@@ -21558,6 +21598,10 @@ PrefabInstance:
     - target: {fileID: 1856830066854091028, guid: 0e8ee33a840ac41599dec4b69e6029fe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856830066854091029, guid: 0e8ee33a840ac41599dec4b69e6029fe, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1856830068072082988, guid: 0e8ee33a840ac41599dec4b69e6029fe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -23981,6 +24025,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6111531261241162197, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7810925492150652114, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -24388,6 +24436,10 @@ PrefabInstance:
     - target: {fileID: 3478826668783339610, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Name
       value: Button Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111531261241162197, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7810925492150652114, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Pivot.x
@@ -25314,6 +25366,10 @@ PrefabInstance:
     - target: {fileID: 1856830066854091028, guid: 0e8ee33a840ac41599dec4b69e6029fe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856830066854091029, guid: 0e8ee33a840ac41599dec4b69e6029fe, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1856830068072082988, guid: 0e8ee33a840ac41599dec4b69e6029fe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -27531,6 +27587,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6111531261241162197, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7810925492150652114, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -27643,6 +27703,10 @@ PrefabInstance:
     - target: {fileID: 3478826668783339610, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Name
       value: Button Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111531261241162197, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6896289541881640813, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Name
@@ -28490,6 +28554,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6111531261241162197, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6896289541881640813, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Name
       value: Play Button
@@ -29270,6 +29338,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6111531261241162197, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7810925492150652114, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -29605,6 +29677,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1856830066854091029, guid: 0e8ee33a840ac41599dec4b69e6029fe, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1856830068072082988, guid: 0e8ee33a840ac41599dec4b69e6029fe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -29771,6 +29847,10 @@ PrefabInstance:
     - target: {fileID: 3478826668783339610, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Name
       value: Button Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111531261241162197, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7810925492150652114, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Pivot.x
@@ -33220,6 +33300,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: throwObject
       objectReference: {fileID: 0}
+    - target: {fileID: 3719600720973567187, guid: 905d0e9b5f1994d98a8bb4548c464478, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7443931664253695160, guid: 905d0e9b5f1994d98a8bb4548c464478, type: 3}
       propertyPath: helperText
       value: 
@@ -33304,6 +33388,10 @@ PrefabInstance:
     - target: {fileID: 614348908417530402, guid: a475b60cb4830470285200f01c8165d1, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -5.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 614348908417530403, guid: a475b60cb4830470285200f01c8165d1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4970271493610232187, guid: a475b60cb4830470285200f01c8165d1, type: 3}
       propertyPath: helperText
@@ -35496,6 +35584,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6111531261241162197, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6896289541881640813, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Name
       value: Sound Button
@@ -36600,6 +36692,10 @@ PrefabInstance:
     - target: {fileID: 3478826668783339610, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Name
       value: Button Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111531261241162197, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6896289541881640813, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Name
@@ -37739,6 +37835,10 @@ PrefabInstance:
     - target: {fileID: 1856830066854091028, guid: 0e8ee33a840ac41599dec4b69e6029fe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856830066854091029, guid: 0e8ee33a840ac41599dec4b69e6029fe, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1856830068072082988, guid: 0e8ee33a840ac41599dec4b69e6029fe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -40448,7 +40548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6111531261241162197, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7810925492150652114, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Pivot.x
@@ -41018,6 +41118,10 @@ PrefabInstance:
     - target: {fileID: 3478826668783339610, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Name
       value: Button Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111531261241162197, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6896289541881640813, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Name
@@ -42410,6 +42514,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1856830066854091029, guid: 0e8ee33a840ac41599dec4b69e6029fe, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1856830068072082988, guid: 0e8ee33a840ac41599dec4b69e6029fe, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -42532,6 +42640,10 @@ PrefabInstance:
     - target: {fileID: 3478826668783339610, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Name
       value: Button Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111531261241162197, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7810925492150652114, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Pivot.x
@@ -43449,6 +43561,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6111531261241162197, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7810925492150652114, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -43617,7 +43733,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1122024387
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 83513ab2731791a44a0aaa950c8dfbfd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -44101,6 +44217,10 @@ PrefabInstance:
     - target: {fileID: 3478826668783339610, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Name
       value: Button Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111531261241162197, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7810925492150652114, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_Pivot.x
@@ -45975,6 +46095,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 276400043}
+    - target: {fileID: 614348908417530403, guid: a475b60cb4830470285200f01c8165d1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4970271493610232187, guid: a475b60cb4830470285200f01c8165d1, type: 3}
       propertyPath: helperText
       value: 
@@ -46162,6 +46286,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 276400043}
+    - target: {fileID: 3719600720973567187, guid: 905d0e9b5f1994d98a8bb4548c464478, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7443931664253695160, guid: 905d0e9b5f1994d98a8bb4548c464478, type: 3}
       propertyPath: helperText
       value: 

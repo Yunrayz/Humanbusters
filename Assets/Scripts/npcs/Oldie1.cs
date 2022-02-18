@@ -6,7 +6,7 @@ public class Oldie1 : MonoBehaviour
 {
     public float speed = 1.5f;
     public int fear;                //fear the NPC is feeling
-    public int fearLimit = 100;     //limit of Fear before he runs away
+    public int fearLimit;     //limit of Fear before he runs away
     public float radius = 2;        //min distance between the NPC and the action for him to be affected
     public bool running;
     private Vector2 obj;
