@@ -123,11 +123,11 @@ public class ObjectFunctions : MonoBehaviour
 
         turnOn = !turnOn;
         audioComponent = collider.GetComponent<AudioSource>();
-        audioToggle = audioComponent.loop 
-        if(audioToggle && theSameScene){
+        audioToggle = audioComponent.loop;
+        //if(audioToggle && theSameScene){
             
 
-        }
+        //}
         collider.SendMessage("hideMenuHelper");
         if (turnOn != false)
             audioComponent.Play();
@@ -146,8 +146,6 @@ public class ObjectFunctions : MonoBehaviour
         collider.SendMessage("hideMenuHelper");
         audioComponent = collider.GetComponent<AudioSource>();
         
-
-        }
     }
 
     public void makeSoundChangeSpriteOnce(Collider2D collider)
