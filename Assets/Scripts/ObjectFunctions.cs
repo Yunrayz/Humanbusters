@@ -13,6 +13,7 @@ public class ObjectFunctions : MonoBehaviour
     private Component[] items;
     private SpriteRenderer spriteComponent;
     private bool turnOn = false;
+    public bool audioToggle;
 
     private Item itemObject;
     private AudioSource audioComponent;
@@ -122,6 +123,11 @@ public class ObjectFunctions : MonoBehaviour
 
         turnOn = !turnOn;
         audioComponent = collider.GetComponent<AudioSource>();
+        audioToggle = audioComponent.loop 
+        if(audioToggle && theSameScene){
+            
+
+        }
         collider.SendMessage("hideMenuHelper");
         if (turnOn != false)
             audioComponent.Play();
@@ -135,10 +141,13 @@ public class ObjectFunctions : MonoBehaviour
         npcFunctions.actionTriggered = true;
         npcFunctions.posAction = collider.transform.position;
         Player player = GameObject.Find("Player").GetComponent<Player>();
+        
         player.hp -= 10;
         collider.SendMessage("hideMenuHelper");
         audioComponent = collider.GetComponent<AudioSource>();
-        audioComponent.Play();
+        
+
+        }
     }
 
     public void makeSoundChangeSpriteOnce(Collider2D collider)
