@@ -1108,7 +1108,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 491ae928349bd482bbee12f3dfbfd8a8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -32376,6 +32376,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6065163333497618821, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 413.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065163333497618821, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -98
+      objectReference: {fileID: 0}
     - target: {fileID: 6065163333497618823, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
       propertyPath: player
       value: 
@@ -32387,6 +32395,10 @@ PrefabInstance:
     - target: {fileID: 6065163333650840329, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
       propertyPath: m_SortingOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065163333854953836, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.9900055
       objectReference: {fileID: 0}
     - target: {fileID: 6065163333854953839, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
       propertyPath: m_SortingOrder
@@ -32415,6 +32427,26 @@ PrefabInstance:
     - target: {fileID: 6065163334144495096, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
       propertyPath: m_SortingOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065163334144495097, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065163334144495097, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065163334144495097, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065163334144495097, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065163334144495097, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 6065163334144495099, guid: 1977113cf83203f41bb4c5077931bec6, type: 3}
       propertyPath: m_Pivot.x
