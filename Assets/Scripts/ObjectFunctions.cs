@@ -13,7 +13,6 @@ public class ObjectFunctions : MonoBehaviour
     private Component[] items;
     private SpriteRenderer spriteComponent;
     private bool turnOn = false;
-    public bool audioToggle;
 
     private Item itemObject;
     private AudioSource audioComponent;
@@ -66,8 +65,11 @@ public class ObjectFunctions : MonoBehaviour
     {
         turnOn = !turnOn;
         audioComponent = collider.GetComponent<AudioSource>();
+        audioComponent.rolloffMode = AudioRolloffMode.Linear;
+        audioComponent.maxDistance = 20f;
         collider.SendMessage("hideMenuHelper");
-
+        if (collider.name == "toilet paper roll")
+            collider.SendMessage("makeAction");
         NPCFunctions npcFunctions = GameObject.Find("Game Manager").GetComponent<NPCFunctions>();
         npcFunctions.actionTriggered = true;
         npcFunctions.posAction = collider.transform.position;
@@ -92,6 +94,7 @@ public class ObjectFunctions : MonoBehaviour
             }
 
             audioComponent.Play();
+
         }
         else
         {
@@ -123,14 +126,14 @@ public class ObjectFunctions : MonoBehaviour
 
         turnOn = !turnOn;
         audioComponent = collider.GetComponent<AudioSource>();
-        audioToggle = audioComponent.loop;
-        //if(audioToggle && theSameScene){
-            
+        audioComponent.rolloffMode = AudioRolloffMode.Linear;
+        audioComponent.maxDistance = 20f;
 
-        //}
         collider.SendMessage("hideMenuHelper");
         if (turnOn != false)
+        {
             audioComponent.Play();
+        }
         else
             audioComponent.Stop();
     }
@@ -141,11 +144,11 @@ public class ObjectFunctions : MonoBehaviour
         npcFunctions.actionTriggered = true;
         npcFunctions.posAction = collider.transform.position;
         Player player = GameObject.Find("Player").GetComponent<Player>();
-        
+
         player.hp -= 10;
         collider.SendMessage("hideMenuHelper");
         audioComponent = collider.GetComponent<AudioSource>();
-        
+
     }
 
     public void makeSoundChangeSpriteOnce(Collider2D collider)
@@ -160,6 +163,8 @@ public class ObjectFunctions : MonoBehaviour
         spriteComponent = collider.GetComponent<SpriteRenderer>();
         spriteComponent.sprite = (Sprite)Resources.Load<Sprite>(collider.transform.parent.name + "/" + spriteComponent.sprite.name + "On") as Sprite;
         audioComponent = collider.GetComponent<AudioSource>();
+        audioComponent.rolloffMode = AudioRolloffMode.Linear;
+        audioComponent.maxDistance = 20f;
         audioComponent.Play();
     }
 
