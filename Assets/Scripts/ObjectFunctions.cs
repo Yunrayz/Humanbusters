@@ -67,6 +67,7 @@ public class ObjectFunctions : MonoBehaviour
         audioComponent = collider.GetComponent<AudioSource>();
         audioComponent.rolloffMode = AudioRolloffMode.Linear;
         audioComponent.maxDistance = 20f;
+        audioComponent.spatialBlend = 1f;
         collider.SendMessage("hideMenuHelper");
         if (collider.name == "toilet paper roll")
             collider.SendMessage("makeAction");
@@ -128,6 +129,7 @@ public class ObjectFunctions : MonoBehaviour
         audioComponent = collider.GetComponent<AudioSource>();
         audioComponent.rolloffMode = AudioRolloffMode.Linear;
         audioComponent.maxDistance = 20f;
+        audioComponent.spatialBlend = 1f;
 
         collider.SendMessage("hideMenuHelper");
         if (turnOn != false)
@@ -149,6 +151,7 @@ public class ObjectFunctions : MonoBehaviour
         collider.SendMessage("hideMenuHelper");
         audioComponent = collider.GetComponent<AudioSource>();
 
+
     }
 
     public void makeSoundChangeSpriteOnce(Collider2D collider)
@@ -165,6 +168,7 @@ public class ObjectFunctions : MonoBehaviour
         audioComponent = collider.GetComponent<AudioSource>();
         audioComponent.rolloffMode = AudioRolloffMode.Linear;
         audioComponent.maxDistance = 20f;
+        audioComponent.spatialBlend = 1f;
         audioComponent.Play();
     }
 
