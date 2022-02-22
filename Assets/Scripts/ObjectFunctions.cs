@@ -13,6 +13,9 @@ public class ObjectFunctions : MonoBehaviour
     private Component[] items;
     private SpriteRenderer spriteComponent;
     private bool turnOn = false;
+    private Dictionary<string, bool> turnOnStatus = new Dictionary<string, bool>();
+
+
 
     private Item itemObject;
     private AudioSource audioComponent;
@@ -63,7 +66,15 @@ public class ObjectFunctions : MonoBehaviour
     }
     public void turnOnObject(Collider2D collider)
     {
-        turnOn = !turnOn;
+        string uniqueID = collider.name + collider.transform.position;
+        if (turnOnStatus.ContainsKey(uniqueID))
+        {
+            turnOnStatus[uniqueID] = !turnOnStatus[uniqueID];
+        }
+        else
+        {
+            turnOnStatus.Add(uniqueID, true);
+        }
         audioComponent = collider.GetComponent<AudioSource>();
         audioComponent.rolloffMode = AudioRolloffMode.Linear;
         audioComponent.maxDistance = 20f;
@@ -77,8 +88,7 @@ public class ObjectFunctions : MonoBehaviour
         Player player = GameObject.Find("Player").GetComponent<Player>();
         player.hp -= 10;
 
-
-        if (turnOn == true)
+        if (turnOnStatus[uniqueID])
         {
             if (collider.transform.childCount > 1)
             {
@@ -119,20 +129,25 @@ public class ObjectFunctions : MonoBehaviour
     public void makeSoundObject(Collider2D collider)
     {
 
+        string uniqueID = collider.name + collider.transform.position;
+        if (turnOnStatus.ContainsKey(uniqueID))
+        {
+            turnOnStatus[uniqueID] = !turnOnStatus[uniqueID];
+        }
+        else
+            turnOnStatus.Add(uniqueID, true);
         NPCFunctions npcFunctions = GameObject.Find("Game Manager").GetComponent<NPCFunctions>();
         npcFunctions.actionTriggered = true;
         npcFunctions.posAction = collider.transform.position;
         Player player = GameObject.Find("Player").GetComponent<Player>();
         player.hp -= 10;
-
-        turnOn = !turnOn;
         audioComponent = collider.GetComponent<AudioSource>();
         audioComponent.rolloffMode = AudioRolloffMode.Linear;
         audioComponent.maxDistance = 20f;
         audioComponent.spatialBlend = 1f;
 
         collider.SendMessage("hideMenuHelper");
-        if (turnOn != false)
+        if (turnOnStatus[uniqueID])
         {
             audioComponent.Play();
         }

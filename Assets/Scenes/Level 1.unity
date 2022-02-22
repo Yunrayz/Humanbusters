@@ -26337,7 +26337,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.5015335, y: 0.56127536}
+  m_Offset: {x: -0.08940506, y: 0.56127536}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -26348,7 +26348,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2547989, y: 0.12754107}
+  m_Size: {x: 0.70606995, y: 0.12754107}
   m_EdgeRadius: 0
 --- !u!82 &1401276803
 AudioSource:
@@ -29889,7 +29889,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03895569, y: 0.7829051}
+  m_Offset: {x: 0.15626526, y: 0.65627575}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -29900,7 +29900,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.47763824, y: 0.79249334}
+  m_Size: {x: 0.2982483, y: 0.53923464}
   m_EdgeRadius: 0
 --- !u!82 &1585172852
 AudioSource:
@@ -39300,7 +39300,7 @@ PrefabInstance:
       objectReference: {fileID: 276400043}
     - target: {fileID: 9173453749043482243, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: makeSoundObject
+      value: turnOnObject
       objectReference: {fileID: 0}
     - target: {fileID: 9173453749043482243, guid: 3d15206ec1e1148d78f0256b76cb53cc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
