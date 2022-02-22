@@ -210,6 +210,7 @@ public class ObjectFunctions : MonoBehaviour
         }
         if (audioComponent != null & itemObject.isSwitchable)
         {
+            audioComponent.Stop();
             audioComponent.PlayOneShot(Resources.Load(audioComponent.name + "Sound") as AudioClip);
         }
     }
